@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: DEV
+  datasource:
+    database: sandbox
+    port: 3306
+    driver-class-name: org.mariadb.jdbc.Driver
+    jdbcUrl: jdbc:mariadb://localhost:3306/sandbox?user=soysauce&password=lily2011
+    username: soysauce
+    password: lily2011
+    configuration:
+      maximum-pool-size: 30
+  jpa:
+    hibernate:
+      ddl-auto: update
+  server:
+    port: 8080
+  springdoc:
+    api-docs:
+      path: /api-docs
+    swagger-ui:
+      path: /swagger-ui-custom.html
+      operationSorter: method
