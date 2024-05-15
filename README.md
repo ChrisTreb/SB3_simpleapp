@@ -8,7 +8,7 @@ docker run -d --name containername -p 5432:5432 -e POSTGRES_PASSWORD=password po
 docker ps
 
 ## Run Container 
-docker exec -it postgresCont bash
+docker exec -it containername bash
 
 ## Connexion à Postgres
 psql -h localhost -U postgres
