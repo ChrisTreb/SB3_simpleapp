@@ -2,7 +2,7 @@
 docker pull postgres
 
 ## Créer et lancer le container
-docker run -d --name <container name> -p 5432:5432 -e POSTGRES_PASSWORD=<password> postgres
+docker run -d --name containername -p 5432:5432 -e POSTGRES_PASSWORD=password postgres
 
 ## Vérifier le fonctionnement du container
 docker ps
@@ -14,13 +14,13 @@ docker exec -it postgresCont bash
 psql -h localhost -U postgres
 
 ## Créer une base de données
-CREATE DATABASE <database>;
+CREATE DATABASE mydatabase;
 
 ## Afficher les databases disponibles
 \l
 
 ## Connexion à la base
-\c <database>
+\c mydatabase
 
 ## Installer PgAdmin4
 
