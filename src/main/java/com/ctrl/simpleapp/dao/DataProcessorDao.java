@@ -27,15 +27,13 @@ public class DataProcessorDao {
         this.jt = new JdbcTemplate(dataSource);
     }
 
-    /*
     @Scheduled(fixedDelay = 10000)
-    public void logUsers() {
-        String dataSourceRequest = "SELECT * FROM books";
+    public void logBooks() {
+        String dataSourceRequest = "SELECT * FROM book LIMIT 2";
         List<Book> booksList =  jt.query(dataSourceRequest, new BookRowMapper());
 
         for(Book book : booksList) {
-            LOGGER.info("Book : {}", book);
+            LOGGER.info(String.valueOf(book));
         }
     }
-    */
 }

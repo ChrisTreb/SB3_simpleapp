@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name="books_loans")
+@Table(name="book_loan")
 public record BookLoan(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)

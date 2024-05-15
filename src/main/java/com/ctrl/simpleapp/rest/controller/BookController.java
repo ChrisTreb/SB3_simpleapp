@@ -2,7 +2,6 @@ package com.ctrl.simpleapp.rest.controller;
 
 import com.ctrl.simpleapp.records.Book;
 import com.ctrl.simpleapp.service.BookService;
-import com.ctrl.simpleapp.service.impl.BookServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
