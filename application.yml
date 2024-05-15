@@ -2,17 +2,18 @@ spring:
   profiles:
     active: DEV
   datasource:
-    database: sandbox
-    port: 3306
-    driver-class-name: org.mariadb.jdbc.Driver
-    jdbcUrl: jdbc:mariadb://localhost:3306/sandbox?user=soysauce&password=lily2011
-    username: soysauce
-    password: lily2011
+    database: ctrl
+    port: 5432
+    driver-class-name: org.postgresql.Driver
+    jdbcUrl: jdbc:postgresql://localhost:5432/ctrl
+    username: postgres
+    password: password
     configuration:
       maximum-pool-size: 30
   jpa:
     hibernate:
       ddl-auto: update
+    show-sql: true
   server:
     port: 8080
   springdoc:

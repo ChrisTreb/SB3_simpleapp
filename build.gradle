@@ -44,7 +44,7 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
 	// JDBC
-	implementation 'org.mariadb.jdbc:mariadb-java-client:3.3.2'
+	implementation 'org.postgresql:postgresql:42.7.3'
 
 	// Tests
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
