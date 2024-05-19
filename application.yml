@@ -5,9 +5,10 @@ spring:
     database: ctrl
     port: 5432
     driver-class-name: org.postgresql.Driver
-    jdbcUrl: jdbc:postgresql://localhost:5432/ctrl
+    jdbcUrl: jdbc:postgresql://0.0.0.0:5432/ctrl
+    #jdbcUrl: jdbc:postgresql://postgresContainer:5432/ctrl
     username: postgres
-    password: password
+    password: postgres
     configuration:
       maximum-pool-size: 30
   jpa:

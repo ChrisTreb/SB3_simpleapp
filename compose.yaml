@@ -1,9 +1,21 @@
 services:
   postgres:
+    container_name: postgresContainer
     image: 'postgres:latest'
     environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_DB=ctrl'
+      - 'POSTGRES_PASSWORD=postgres'
+      - 'POSTGRES_USER=postgres'
     ports:
-      - '5432'
+      - '5432:5432'
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
+  app:
+    container_name: jAppContainer
+    build: ./
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    depends_on:
+      - postgres

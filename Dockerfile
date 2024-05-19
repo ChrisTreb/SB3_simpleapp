@@ -1,4 +1,7 @@
 FROM eclipse-temurin:21
-RUN mkdir /opt/app
-COPY simpleapp.jar /opt/app
-CMD ["java", "-jar", "/opt/app/simpleapp.jar"]
+VOLUME /tmp
+EXPOSE 8080
+ARG JAR_FILE="build/libs/simpleapp-0.0.1-SNAPSHOT.jar"
+ADD ${JAR_FILE} "app.jar"
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
