@@ -1,3 +1,4 @@
+version: "3.5"
 services:
   postgres:
     container_name: postgresContainer
@@ -16,6 +17,7 @@ services:
     build: ./
     ports:
       - "8080:8080"
-    restart: on-failure
+    environment:
+      - "SPRING_PROFILES_ACTIVE=REC"
     depends_on:
       - postgres

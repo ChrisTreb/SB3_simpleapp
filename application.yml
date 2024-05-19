@@ -1,12 +1,53 @@
 spring:
   profiles:
     active: DEV
+  docker:
+    compose:
+      profiles:
+        active: REC
   datasource:
     database: ctrl
     port: 5432
     driver-class-name: org.postgresql.Driver
     jdbcUrl: jdbc:postgresql://0.0.0.0:5432/ctrl
     #jdbcUrl: jdbc:postgresql://postgresContainer:5432/ctrl
+    username: postgres
+    password: postgres
+    configuration:
+      maximum-pool-size: 30
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  server:
+    port: 8080
+  springdoc:
+    api-docs:
+      path: /api-docs
+    swagger-ui:
+      path: /swagger-ui-custom.html
+      operationSorter: method
+  spring:
+    devtools:
+      add-properties: true
+
+---
+# Run with specific profile :
+# ./gradlew bootRun --args='--spring.profiles.active=dev'
+
+spring:
+  config:
+    activate:
+      on-profile: REC
+  docker:
+    compose:
+      profiles:
+        active: REC
+  datasource:
+    database: ctrl
+    port: 5432
+    driver-class-name: org.postgresql.Driver
+    jdbcUrl: jdbc:postgresql://postgresContainer:5432/ctrl
     username: postgres
     password: postgres
     configuration:
