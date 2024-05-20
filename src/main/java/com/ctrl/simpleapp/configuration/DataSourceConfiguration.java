@@ -13,10 +13,10 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 @Configuration
-@ConfigurationProperties("spring.datasource")
+@ConfigurationProperties(prefix = "spring.datasource")
 public class DataSourceConfiguration {
 
-    @Value("${spring.datasource.jdbcUrl}")
+    @Value("${spring.datasource.jdbc-url}")
     private String uri;
 
     @Value("${spring.datasource.username}")
