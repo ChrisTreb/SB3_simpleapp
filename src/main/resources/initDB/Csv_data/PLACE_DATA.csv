@@ -1,0 +1,101 @@
+id;created_at;address;city;country;postal_code;free_rooms
+1;2024-01-12 07:46:22;31 Mayfield Way;Al Ḩashwah;Yemen;;19
+2;2024-01-10 23:32:49;7 Cordelia Street;Shishang;China;;43
+3;2023-01-20 00:09:59;8 Utah Road;Mintian;China;;11
+4;2023-03-26 02:20:46;800 Di Loreto Street;Pigcawayan;Philippines;9412;38
+5;2023-02-25 17:34:03;34686 Pleasure Center;Karangbenda;Indonesia;;14
+6;2023-02-15 23:44:08;145 Hagan Plaza;Huangshi;China;;42
+7;2024-05-10 14:55:00;83 Mayer Junction;Alençon;France;61015 CEDEX;43
+8;2024-05-16 21:35:16;671 Tennessee Pass;Sapporo;Japan;758-0612;15
+9;2023-04-16 05:44:05;3208 Lillian Alley;Consolación del Sur;Cuba;;9
+10;2023-04-11 10:57:00;7058 Dunning Hill;Mieszkowice;Poland;74-505;10
+11;2023-09-23 04:43:58;19 International Parkway;Benniu;China;;3
+12;2024-03-08 18:09:55;09 Hansons Avenue;Barras;Brazil;64100-000;5
+13;2024-05-18 18:36:55;42015 Columbus Park;Abang;Indonesia;;29
+14;2023-03-07 09:16:49;07 Westridge Park;Alarobia;Madagascar;;27
+15;2023-01-16 23:46:33;3 Crescent Oaks Circle;Cavalões;Portugal;4760-421;16
+16;2023-08-23 19:21:45;96621 Bluestem Alley;Purworejo;Indonesia;;38
+17;2023-05-18 15:15:34;532 International Circle;Hartford;United States;06152;48
+18;2023-03-16 12:19:20;2 Katie Parkway;Nizhnyaya Tura;Russia;632851;17
+19;2023-11-30 06:56:52;1947 Birchwood Park;Dzuunmod;Mongolia;;21
+20;2023-12-17 00:31:09;7 Barby Place;Xinminxiang;China;;29
+21;2023-02-04 09:49:37;4488 Crest Line Court;Tagiura;Libya;;21
+22;2023-05-17 13:01:45;70594 Amoth Hill;Chigorodó;Colombia;057418;50
+23;2023-03-21 09:28:18;123 Dorton Road;Yinyang;China;;9
+24;2023-02-27 07:04:53;0 Kenwood Trail;Silvares;Portugal;3500-548;13
+25;2024-05-19 13:42:48;488 Farragut Center;Luocheng;China;;14
+26;2023-10-11 10:16:02;5666 Starling Terrace;Haliut;China;;30
+27;2023-10-04 05:21:32;3 Dorton Place;Kibonsod;Philippines;6128;12
+28;2023-05-09 01:56:09;03229 Rutledge Crossing;Fushui;China;;41
+29;2023-02-28 18:17:25;40158 Grover Point;Lyubeshiv;Ukraine;;8
+30;2024-04-30 01:40:58;77 Grasskamp Drive;Sentul;Indonesia;;3
+31;2023-12-12 02:29:01;9 Texas Road;Mococa;Brazil;13730-000;13
+32;2024-05-13 19:57:35;858 Meadow Ridge Point;Ḩabbān;Yemen;;20
+33;2023-02-24 05:20:18;4760 Hallows Trail;Fastiv;Ukraine;;33
+34;2024-01-10 13:33:57;3861 Grayhawk Street;Semerak;Indonesia;;17
+35;2023-02-18 08:16:42;651 Hayes Drive;Malambo;Colombia;083028;10
+36;2023-07-15 00:15:24;3 Tony Way;Saint-Quentin-Fallavier;France;38293 CEDEX;8
+37;2024-01-03 02:57:29;3602 Fuller Circle;Middelburg;Netherlands;4334;10
+38;2023-08-29 08:26:07;18022 Randy Crossing;Talondang;Indonesia;;21
+39;2023-09-10 17:43:32;60721 Nova Point;Wangmeng;China;;36
+40;2024-03-27 16:46:38;23 Ridgeview Way;Ozalj;Croatia;47280;22
+41;2023-11-14 15:53:57;53540 Lakewood Way;Saint Louis;United States;63126;18
+42;2024-05-08 06:44:44;744 Pine View Center;Tambaksari;Indonesia;;46
+43;2023-06-20 00:05:40;5031 Ludington Avenue;Huangzhai;China;;9
+44;2023-07-16 06:20:34;067 Debs Parkway;Ludu;China;;8
+45;2024-02-05 00:36:12;9015 Esch Trail;Ushuaia;Argentina;9410;49
+46;2023-03-31 18:47:35;55373 Village Green Road;Ongandjera;Namibia;;34
+47;2023-03-02 16:19:05;76797 David Circle;Dongying;China;;40
+48;2023-05-12 13:42:09;550 Bunker Hill Drive;Dahe;China;;19
+49;2024-05-02 19:22:24;9 Ohio Park;Calaoagan;Philippines;1107;12
+50;2024-02-25 07:11:59;5 Heffernan Junction;Jinhe;China;;2
+51;2024-03-10 17:15:48;60 Lotheville Plaza;Lincheng;China;;10
+52;2023-01-23 04:27:55;5144 Green Ridge Street;Baraçais;Portugal;2540-557;5
+53;2023-03-14 23:13:11;89 Brentwood Court;Dayr Abū Ḑa‘īf;Palestinian Territory;;34
+54;2024-03-11 05:55:07;5 Memorial Way;Xiangfu;China;;18
+55;2024-05-10 00:53:17;655 Lindbergh Park;Karema;Tanzania;;5
+56;2023-06-30 10:14:33;22719 Stuart Point;Jabonga;Philippines;8607;29
+57;2023-01-29 19:50:13;7248 Westport Drive;Zabrušany;Czech Republic;417 71;4
+58;2023-12-21 11:31:48;00 Dorton Point;Ouaoula;Morocco;;48
+59;2023-04-19 21:03:28;03286 Northview Terrace;Lebowakgomo;South Africa;9640;5
+60;2023-01-27 14:55:24;3 Messerschmidt Drive;Tambaú;Brazil;13710-000;1
+61;2023-05-15 03:55:56;72 Ludington Street;Tambov;Russia;392999;40
+62;2024-04-16 09:47:13;4 Merchant Crossing;Greenland;Barbados;;16
+63;2023-11-04 20:16:08;47 Division Drive;Niono;Mali;;26
+64;2024-03-17 16:13:21;3 Westridge Place;Villa General Belgrano;Argentina;5195;19
+65;2023-06-05 18:25:54;99385 Meadow Ridge Street;Dolna Banjica;Macedonia;1238;11
+66;2023-07-05 20:40:14;923 Dunning Avenue;Andrijevica;Montenegro;;34
+67;2024-04-20 12:12:11;84 Barby Drive;Itororó;Brazil;45710-000;10
+68;2024-05-02 09:20:53;7714 Washington Court;Charlotte;United States;28299;14
+69;2024-02-07 09:38:19;89129 Golf View Place;Montauban;France;82037 CEDEX;33
+70;2024-01-05 00:15:13;14427 Sauthoff Terrace;Łobżenica;Poland;89-310;24
+71;2023-10-31 00:47:01;37573 Aberg Road;Cherven Bryag;Bulgaria;5994;4
+72;2023-03-04 11:01:27;87 Basil Point;Voi;Kenya;;24
+73;2023-01-04 00:33:10;11 Delladonna Park;Isugod;Philippines;4336;24
+74;2024-01-22 17:18:49;7 Everett Hill;Pader Palwo;Uganda;;40
+75;2024-04-21 06:36:53;4481 Hooker Crossing;Wuci;China;;50
+76;2023-06-30 00:50:38;7 Northport Lane;Landskrona;Sweden;261 27;43
+77;2023-04-06 13:03:45;20877 Montana Avenue;Töysä;Finland;63600;19
+78;2023-03-23 04:16:43;4 Prairieview Court;Арачиново;Macedonia;1047;4
+79;2023-01-19 07:05:30;33844 Esker Trail;Parczew;Poland;21-200;5
+80;2024-02-25 05:08:13;66 Corry Hill;San Luis;Mexico;27400;9
+81;2023-08-31 09:09:11;6 Bashford Crossing;Granada;Peru;;4
+82;2023-02-14 07:29:36;622 Claremont Avenue;Piedade;Brazil;18170-000;21
+83;2024-01-25 19:44:29;5 Kingsford Lane;Shreveport;United States;71137;9
+84;2023-01-14 09:45:50;1105 Kropf Pass;Mỹ Xuyên;Vietnam;;49
+85;2023-03-09 07:52:28;36716 Pleasure Avenue;Ô Môn;Vietnam;;44
+86;2023-06-08 00:51:14;29 Waxwing Place;Sankeng;China;;10
+87;2023-04-16 20:31:38;55252 Dorton Crossing;Anaráchi;Greece;;14
+88;2023-08-27 16:33:10;6 Evergreen Alley;Yuza;Japan;999-8531;7
+89;2023-09-19 18:37:03;751 Bultman Park;Oslo;Norway;0669;1
+90;2023-05-11 01:07:29;59 Brickson Park Parkway;Houndé;Burkina Faso;;28
+91;2023-03-26 10:31:50;641 Northport Parkway;Muarasiau;Indonesia;;29
+92;2023-03-24 19:24:39;68 Troy Circle;Paris 11;France;75128 CEDEX 11;32
+93;2023-05-23 12:32:38;9682 4th Drive;Lyon;France;69265 CEDEX 09;11
+94;2023-01-15 13:05:07;1 Straubel Street;Gislaved;Sweden;332 24;28
+95;2023-07-07 06:14:53;6 Vera Circle;Tiannan;China;;8
+96;2023-06-17 03:30:31;0375 Alpine Crossing;Lixu;China;;27
+97;2023-05-31 04:32:57;9450 Gateway Court;Kuaidamao;China;;45
+98;2023-07-05 03:43:57;5 Del Mar Terrace;El Cocuy;Colombia;151287;29
+99;2023-10-13 14:32:29;413 Stang Way;El Fasher;Sudan;;10
+100;2023-06-04 08:31:51;7 Harbort Road;Indralayang;Indonesia;;49
