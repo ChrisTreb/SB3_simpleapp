@@ -16,5 +16,5 @@ public record Booking(
         long place_id,
         int room_number,
         Date start_date,
-        Date end_Date) {
+        Date end_date) {
 }
