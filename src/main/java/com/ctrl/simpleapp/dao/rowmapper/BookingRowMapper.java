@@ -1,4 +1,4 @@
-package com.ctrl.simpleapp.rowmapper;
+package com.ctrl.simpleapp.dao.rowmapper;
 
 import com.ctrl.simpleapp.records.Booking;
 import org.springframework.jdbc.core.RowMapper;

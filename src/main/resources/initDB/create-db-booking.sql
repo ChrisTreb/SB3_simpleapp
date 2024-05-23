@@ -1,0 +1,9 @@
+CREATE TABLE booking (
+	id SERIAL PRIMARY KEY,
+	created_at TIMESTAMP NOT NULL DEFAULT now(),
+	user_id INTEGER NOT NULL,
+	place_id INTEGER NOT NULL,
+	room_number INTEGER NOT NULL,
+	start_date TIMESTAMP NOT NULL DEFAULT now(),
+	end_date TIMESTAMP NOT NULL DEFAULT now()
+);
