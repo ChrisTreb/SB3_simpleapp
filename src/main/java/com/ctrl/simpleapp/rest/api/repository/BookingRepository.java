@@ -1,10 +1,10 @@
 package com.ctrl.simpleapp.rest.api.repository;
 
-import com.ctrl.simpleapp.records.Book;
+import com.ctrl.simpleapp.records.Booking;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookRepository extends CrudRepository<Book, Long> {
+public interface BookingRepository extends CrudRepository<Booking, Long> {
 
 }

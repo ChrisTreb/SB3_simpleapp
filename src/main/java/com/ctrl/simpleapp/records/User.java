@@ -3,13 +3,16 @@ package com.ctrl.simpleapp.records;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.Id;
 
+import java.util.Date;
+
 @Entity
 @Table(name="user")
 public record User(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         long id,
-        String name,
+        Date created_at,
+        String lastname,
         String firstname,
         String email,
         String gender,

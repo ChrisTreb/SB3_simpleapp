@@ -6,14 +6,15 @@ import org.springframework.data.annotation.Id;
 import java.util.Date;
 
 @Entity
-@Table(name="book", schema="public")
-public record Book(
+@Table(name="booking", schema="public")
+public record Booking(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         long id,
         Date created_at,
-        String book_title,
-        String author,
-        String isbn,
-        boolean available) {
+        long user_id,
+        long place_id,
+        int room_number,
+        Date start_date,
+        Date end_Date) {
 }
