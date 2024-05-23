@@ -5,5 +5,5 @@ CREATE TABLE place (
 	city VARCHAR (100) NOT NULL,
 	country VARCHAR (100) NOT NULL,
 	postal_code VARCHAR (20) NOT NULL,
-	int free_rooms NOT NULL
+	free_rooms INTEGER NOT NULL
 );

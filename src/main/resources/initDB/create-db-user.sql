@@ -1,4 +1,4 @@
-CREATE TABLE user (
+CREATE TABLE user_ (
 	id SERIAL PRIMARY KEY,
 	created_at TIMESTAMP NOT NULL DEFAULT now(),
 	lastname VARCHAR (50) NOT NULL,
@@ -9,5 +9,5 @@ CREATE TABLE user (
 	address VARCHAR (150) NOT NULL,
 	city VARCHAR (100) NOT NULL,
 	country VARCHAR (100) NOT NULL,
-	postal_code VARCHAR (20) NOT NULL,
+	postal_code VARCHAR (20) NOT NULL
 );

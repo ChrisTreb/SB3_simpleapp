@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import java.util.Date;
 
 @Entity
-@Table(name="user")
+@Table(name="user_")
 public record User(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
