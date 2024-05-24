@@ -1,4 +1,4 @@
-package com.ctrl.simpleapp.rowmapper;
+package com.ctrl.simpleapp.dao.rowmapper;
 
 import com.ctrl.simpleapp.records.User;
 import org.springframework.jdbc.core.RowMapper;
@@ -11,12 +11,13 @@ public class UserRowMapper implements RowMapper<User> {
     public User mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new User(
                 rs.getLong("id"),
-                rs.getString("first_name"),
-                rs.getString("last_name"),
+                rs.getTimestamp("created_at"),
+                rs.getString("lastname"),
+                rs.getString("firstname"),
                 rs.getString("email"),
                 rs.getString("gender"),
                 rs.getString("phone"),
-                rs.getString("adress"),
+                rs.getString("address"),
                 rs.getString("city"),
                 rs.getString("country"),
                 rs.getString("postal_code")
