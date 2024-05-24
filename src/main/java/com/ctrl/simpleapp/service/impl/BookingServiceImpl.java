@@ -15,7 +15,6 @@ public class BookingServiceImpl implements BookingService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BookingServiceImpl.class);
 
-
     @Autowired
     BookingRepository bookingRepository;
 
