@@ -38,3 +38,6 @@ sudo chmod 666 /var/run/docker.sock
 
 ### Récupérer l'ip du container postgresContainer our pgadmin4
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' postgresContainer
+
+### Supprimer le cache docker
+docker system prune -a
