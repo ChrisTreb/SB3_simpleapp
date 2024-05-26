@@ -31,3 +31,6 @@ http://localhost:8080/swagger-ui/index.html
 
 ### Lancer le container
 docker start postgresCont
+
+### Ajout des droits docker dans intellij
+sudo chmod 666 /var/run/docker.sock
