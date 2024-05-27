@@ -35,10 +35,10 @@ public class UserController {
         return userService.updateUser(user, userId);
     }
 
-    @DeleteMapping("/delete-bookings/{id}")
-    public String deleteBookingById(@PathVariable("id") Long userId) {
+    @DeleteMapping("/delete-user/{id}")
+    public String deleteUserById(@PathVariable("id") Long userId) {
         userService.deleteUserById(userId);
-        return "Book deleted successfully - id : " + userId;
+        return "User deleted successfully - id : " + userId;
     }
 
 }
