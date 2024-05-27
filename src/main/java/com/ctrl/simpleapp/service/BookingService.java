@@ -10,7 +10,7 @@ public interface BookingService {
 
     List<Booking> fetchBookingList();
 
-    Booking updateBook(Booking booking, Long bookId);
+    Booking updateBooking(Booking booking, Long bookingId);
 
-    void deleteBookingById(Long bookId);
+    void deleteBookingById(Long bookingId);
 }

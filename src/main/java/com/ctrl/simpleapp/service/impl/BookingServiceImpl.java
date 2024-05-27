@@ -29,7 +29,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public Booking updateBook(Booking booking, Long bookingId) {
+    public Booking updateBooking(Booking booking, Long bookingId) {
 
         if (bookingRepository.findById(bookingId).isPresent()) {
             Booking bookingDB = bookingRepository.findById(bookingId).get();
