@@ -1,6 +1,6 @@
 package com.ctrl.simpleapp.rest.controller;
 
-import com.ctrl.simpleapp.records.User;
+import com.ctrl.simpleapp.records.AppUser;
 import com.ctrl.simpleapp.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,18 +21,18 @@ public class UserController {
     }
 
     @PostMapping("/save-user")
-    public User saveUser(@Valid @RequestBody User user) {
-        return userService.saveUser(user);
+    public AppUser saveUser(@Valid @RequestBody AppUser appUser) {
+        return userService.saveUser(appUser);
     }
 
     @GetMapping("/user")
-    public List<User> fetchUserList() {
+    public List<AppUser> fetchUserList() {
         return userService.fetchUserList();
     }
 
     @PutMapping("/put-user/{id}")
-    public User updateUser(@RequestBody User user, @PathVariable("id") Long userId) {
-        return userService.updateUser(user, userId);
+    public AppUser updateUser(@RequestBody AppUser appUser, @PathVariable("id") Long userId) {
+        return userService.updateUser(appUser, userId);
     }
 
     @DeleteMapping("/delete-user/{id}")

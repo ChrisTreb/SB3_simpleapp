@@ -1,6 +1,6 @@
 package com.ctrl.simpleapp.service.impl;
 
-import com.ctrl.simpleapp.records.User;
+import com.ctrl.simpleapp.records.AppUser;
 import com.ctrl.simpleapp.rest.api.repository.UserRepository;
 import com.ctrl.simpleapp.service.UserService;
 import org.slf4j.Logger;
@@ -19,22 +19,22 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepository;
 
     @Override
-    public User saveUser(User user) {
-        return userRepository.save(user);
+    public AppUser saveUser(AppUser appUser) {
+        return userRepository.save(appUser);
     }
 
     @Override
-    public List<User> fetchUserList() {
-        return (List<User>) userRepository.findAll();
+    public List<AppUser> fetchUserList() {
+        return (List<AppUser>) userRepository.findAll();
     }
 
     @Override
-    public User updateUser(User user, Long userId) {
+    public AppUser updateUser(AppUser appUser, Long userId) {
         if (userRepository.findById(userId).isPresent()) {
-            User userDB = userRepository.findById(userId).get();
-            return userRepository.save(userDB);
+            AppUser appUserDB = userRepository.findById(userId).get();
+            return userRepository.save(appUserDB);
         } else {
-            LOGGER.error("User bot found in our database - id : {}", user.id());
+            LOGGER.error("User bot found in our database - id : {}", appUser.id());
             return null;
         }
     }

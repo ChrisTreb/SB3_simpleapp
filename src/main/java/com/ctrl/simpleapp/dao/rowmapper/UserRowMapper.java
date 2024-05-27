@@ -1,15 +1,15 @@
 package com.ctrl.simpleapp.dao.rowmapper;
 
-import com.ctrl.simpleapp.records.User;
+import com.ctrl.simpleapp.records.AppUser;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserRowMapper implements RowMapper<User> {
+public class UserRowMapper implements RowMapper<AppUser> {
     @Override
-    public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-        return new User(
+    public AppUser mapRow(ResultSet rs, int rowNum) throws SQLException {
+        return new AppUser(
                 rs.getLong("id"),
                 rs.getTimestamp("created_at"),
                 rs.getString("lastname"),

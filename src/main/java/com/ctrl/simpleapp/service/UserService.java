@@ -1,16 +1,16 @@
 package com.ctrl.simpleapp.service;
 
-import com.ctrl.simpleapp.records.User;
+import com.ctrl.simpleapp.records.AppUser;
 
 import java.util.List;
 
 public interface UserService {
 
-    User saveUser(User user);
+    AppUser saveUser(AppUser appUser);
 
-    List<User> fetchUserList();
+    List<AppUser> fetchUserList();
 
-    User updateUser(User user, Long userId);
+    AppUser updateUser(AppUser appUser, Long userId);
 
     void deleteUserById(Long userId);
 }
