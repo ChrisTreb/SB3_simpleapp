@@ -44,4 +44,4 @@ docker system prune -a
 
 ### Telebit
 Launch on ubuntu : curl -fsSL https://get.telebit.io | bash
-HTTP : telebit http 8080
+HTTP : ~/telebit http 8080
