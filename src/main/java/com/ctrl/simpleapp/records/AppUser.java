@@ -6,8 +6,8 @@ import org.springframework.data.annotation.Id;
 import java.util.Date;
 
 @Entity
-@Table(name="user_")
-public record User(
+@Table(name="appuser")
+public record AppUser(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         long id,
