@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BookingRowMapper implements RowMapper<Booking> {
+    @SuppressWarnings("null")
     @Override
     public Booking mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new Booking(
