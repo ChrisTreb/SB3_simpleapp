@@ -13,7 +13,7 @@ services:
     container_name: jBookingService
     build: ./
     ports:
-      - "8080:8080"
+      - "8443:8443"
     environment:
       - "SPRING_PROFILES_ACTIVE=REC"
     depends_on:

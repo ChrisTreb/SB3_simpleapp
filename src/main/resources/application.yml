@@ -18,17 +18,16 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  server:
-    port: 8080
   springdoc:
     api-docs:
       path: /api-docs
     swagger-ui:
       path: /swagger-ui-custom.html
       operationSorter: method
-  spring:
-    devtools:
-      add-properties: true
+  devtools:
+    add-properties: true
+server:
+  port: 8080
 
 ---
 # Run with specific profile :
@@ -55,11 +54,16 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  server:
-    port: 8080
   springdoc:
     api-docs:
       path: /api-docs
     swagger-ui:
       path: /swagger-ui-custom.html
       operationSorter: method
+server:
+  port: 8443
+  ssl:
+    key-store: "classpath:keystore/simpleapp.p12"
+    key-store-type: PKCS12 # keystore type
+    key-alias: simpleapp # keystore alias
+    key-store-password: password  # keystore password
