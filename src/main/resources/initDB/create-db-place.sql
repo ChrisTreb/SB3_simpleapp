@@ -6,5 +6,5 @@ CREATE TABLE place (
 	country VARCHAR (100) NOT NULL,
 	postal_code VARCHAR (20),
 	free_rooms INTEGER NOT NULL,
-	daily-price NUMERIC(15,2) NOT NULL DEFAULT 0
+	daily_price NUMERIC(15,2) NOT NULL DEFAULT 0
 );
