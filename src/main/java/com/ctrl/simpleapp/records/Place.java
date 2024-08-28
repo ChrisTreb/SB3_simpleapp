@@ -19,5 +19,6 @@ public record Place(
         String city,
         String country,
         String postalCode,
-        int free_rooms) {
+        int free_rooms,
+        double daily_price) {
 }
