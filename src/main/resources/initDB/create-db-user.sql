@@ -1,4 +1,4 @@
-CREATE TABLE user_ (
+CREATE TABLE app_user (
 	id SERIAL PRIMARY KEY,
 	created_at TIMESTAMP NOT NULL DEFAULT now(),
 	lastname VARCHAR (50) NOT NULL,
