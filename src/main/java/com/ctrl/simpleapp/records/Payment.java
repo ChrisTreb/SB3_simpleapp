@@ -15,8 +15,8 @@ public record Payment(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         long id,
-        long bookingId,
+        long booking_id,
         Date created_at,
-        Date paymentDate) {
+        Date payment_date) {
 }
 

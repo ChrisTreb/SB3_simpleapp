@@ -20,7 +20,7 @@ public record Place(
         String city,
         String country,
         String description,
-        String phoneNumber,
+        String phone_number,
         String email,
         int rating) {
 }

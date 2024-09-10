@@ -14,10 +14,10 @@ public record Booking(
         Date created_at,
         long user_id,
         long place_id,
-        int room_number,
-        int numberOfGuests,
+        long room_id,
+        int number_of_guests,
         Date start_date,
         Date end_date,
-        double totalPrice,
+        double total_price,
         String status) {
 }
