@@ -5,7 +5,8 @@ CREATE TABLE booking (
 	place_id INTEGER NOT NULL,
 	room_id INTEGER NOT NULL,
 	number_of_guests INTEGER NOT NULL,
-	start_date TIMESTAMP NOT NULL DEFAULT now(),
+	start_date DATE,
+	end_date DATE,
 	total_price NUMERIC (10,2) NOT NULL DEFAULT 0,
     status VARCHAR (50)
 );
