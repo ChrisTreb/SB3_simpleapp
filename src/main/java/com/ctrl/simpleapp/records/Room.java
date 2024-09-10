@@ -8,19 +8,19 @@ import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
+
 @Entity
-@Table(name="place", schema="public")
-public record Place(
+@Table(name="room", schema="public")
+public record Room(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         long id,
+        long placeId,
         Date created_at,
-        String name,
-        String address,
-        String city,
-        String country,
-        String description,
-        String phoneNumber,
-        String email,
-        int rating) {
+        int roomNumber,
+        String roomType,
+        double pricePerNight,
+        int guestsCapacity,
+        boolean isAvailable) {
 }
+
