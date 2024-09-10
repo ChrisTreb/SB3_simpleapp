@@ -16,7 +16,7 @@ public record AppUser(
         String firstname,
         String email,
         String gender,
-        Date dateOfBirth,
+        Date date_of_birth,
         String address,
         String city,
         String country,
