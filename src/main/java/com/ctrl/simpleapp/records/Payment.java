@@ -8,19 +8,15 @@ import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
+
 @Entity
-@Table(name="place", schema="public")
-public record Place(
+@Table(name="payment", schema="public")
+public record Payment(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         long id,
+        long booking_id,
         Date created_at,
-        String name,
-        String address,
-        String city,
-        String country,
-        String description,
-        String phone_number,
-        String email,
-        int rating) {
+        Date payment_date) {
 }
+

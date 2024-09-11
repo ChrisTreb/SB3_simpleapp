@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import java.util.Date;
 
 @Entity
-@Table(name="appuser")
+@Table(name="app_user")
 public record AppUser(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,9 +16,9 @@ public record AppUser(
         String firstname,
         String email,
         String gender,
-        String phone,
+        Date date_of_birth,
         String address,
         String city,
         String country,
-        String postalCode) {
+        String role) {
 }

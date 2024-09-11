@@ -5,9 +5,9 @@ CREATE TABLE app_user (
 	firstname VARCHAR (50) NOT NULL,
 	email VARCHAR (100) NOT NULL,
 	gender VARCHAR (20) NOT NULL,
-	phone VARCHAR (20) NOT NULL,
+	date_of_birth DATE,
 	address VARCHAR (150) NOT NULL,
 	city VARCHAR (100) NOT NULL,
 	country VARCHAR (100) NOT NULL,
-	postal_code VARCHAR (20)
+	role VARCHAR (20)
 );

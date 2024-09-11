@@ -1,0 +1,6 @@
+CREATE TABLE payment (
+	id SERIAL PRIMARY KEY,
+	booking_id INTEGER NOT NULL,
+	created_at TIMESTAMP NOT NULL DEFAULT now(),
+	payment_date TIMESTAMP NOT NULL DEFAULT now()
+);

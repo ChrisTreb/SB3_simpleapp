@@ -2,12 +2,14 @@ package com.ctrl.simpleapp.dao.rowmapper;
 
 import com.ctrl.simpleapp.records.AppUser;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserRowMapper implements RowMapper<AppUser> {
-    @SuppressWarnings("null")
+@Component
+public class AppUserRowmapper implements RowMapper<AppUser> {
+
     @Override
     public AppUser mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new AppUser(
@@ -17,11 +19,11 @@ public class UserRowMapper implements RowMapper<AppUser> {
                 rs.getString("firstname"),
                 rs.getString("email"),
                 rs.getString("gender"),
-                rs.getString("phone"),
+                rs.getDate("date_of_birth"),
                 rs.getString("address"),
                 rs.getString("city"),
                 rs.getString("country"),
-                rs.getString("postal_code")
+                rs.getString("role")
         );
     }
 }

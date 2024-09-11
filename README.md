@@ -1,6 +1,9 @@
 ### Récupérer image docker postgres
 docker pull postgres
 
+### Donner les droits au user CTRL docker
+sudo chown ctrl:docker /var/run/docker.sock
+
 ### Créer et lancer le container
 docker run -d --name containername -p 5432:5432 -e POSTGRES_PASSWORD=password postgres
 

@@ -1,10 +1,12 @@
 CREATE TABLE place (
 	id SERIAL PRIMARY KEY,
 	created_at TIMESTAMP NOT NULL DEFAULT now(),
+	name VARCHAR (100) NOT NULL,
 	address VARCHAR (150) NOT NULL,
 	city VARCHAR (100) NOT NULL,
 	country VARCHAR (100) NOT NULL,
-	postal_code VARCHAR (20),
-	free_rooms INTEGER NOT NULL,
-	daily_price NUMERIC(15,2) NOT NULL DEFAULT 0
+	description VARCHAR (5000),
+	phone_number VARCHAR (20),
+	email VARCHAR (50),
+	rating INTEGER NOT NULL DEFAULT 0
 );
