@@ -30,7 +30,7 @@ public class AppUserDaoImpl implements AppUserDao {
     @Override
     public List<AppUser> getUserByStringCriteria(String criteria, String search) {
 
-        String query = QUERY + " WHERE " + criteria + " LIKE '%" + search + "%';";
+        String query = QUERY + " WHERE " + criteria + " ILIKE '%" + search + "%';";
         LOGGER.info("Query getUserByStringCriteria, criteria : {} - search : {} - Query = {}", criteria, search, query);
 
         return jdbcTemplate.query(query, new AppUserRowmapper());
