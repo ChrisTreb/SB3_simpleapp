@@ -20,22 +20,22 @@ public class PlaceController {
         this.placeService = placeService;
     }
 
-    @PostMapping("/save-places")
+    @PostMapping("/save-place")
     public Place savePlace(@Valid @RequestBody Place place) {
         return placeService.savePlace(place);
     }
 
-    @GetMapping("/places")
+    @GetMapping("/place")
     public List<Place> fetchPlaceList() {
         return placeService.fetchPlaceList();
     }
 
-    @PutMapping("/put-places/{id}")
+    @PutMapping("/put-place/{id}")
     public Place updatePlace(@RequestBody Place place, @PathVariable("id") Long placeId) {
         return placeService.updatePlace(place, placeId);
     }
 
-    @DeleteMapping("/delete-places/{id}")
+    @DeleteMapping("/delete-place/{id}")
     public String deletePlaceById(@PathVariable("id") Long placeId) {
         placeService.deletePlaceById(placeId);
         return "Place deleted successfully - id : " + placeId;

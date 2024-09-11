@@ -20,22 +20,22 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
-    @PostMapping("/save-bookings")
+    @PostMapping("/save-booking")
     public Booking saveBooking(@Valid @RequestBody Booking booking) {
         return bookingService.saveBooking(booking);
     }
 
-    @GetMapping("/bookings")
+    @GetMapping("/booking")
     public List<Booking> fetchBookingList() {
         return bookingService.fetchBookingList();
     }
 
-    @PutMapping("/put-bookings/{id}")
+    @PutMapping("/put-booking/{id}")
     public Booking updateBooking(@RequestBody Booking booking, @PathVariable("id") Long bookingId) {
         return bookingService.updateBooking(booking, bookingId);
     }
 
-    @DeleteMapping("/delete-bookings/{id}")
+    @DeleteMapping("/delete-booking/{id}")
     public String deleteBookingById(@PathVariable("id") Long bookingId) {
         bookingService.deleteBookingById(bookingId);
         return "Book deleted successfully - id : " + bookingId;
