@@ -13,4 +13,6 @@ public interface UserService {
     AppUser updateUser(AppUser appUser, Long userId);
 
     void deleteUserById(Long userId);
+
+    List<AppUser> getUsersByLastName(String search);
 }

@@ -1,5 +1,6 @@
 package com.ctrl.simpleapp.service.impl;
 
+import com.ctrl.simpleapp.dao.AppUserDao;
 import com.ctrl.simpleapp.records.AppUser;
 import com.ctrl.simpleapp.rest.api.repository.UserRepository;
 import com.ctrl.simpleapp.service.UserService;
@@ -18,6 +19,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    AppUserDao appUserDao;
+
     @Override
     public AppUser saveUser(AppUser appUser) {
         return userRepository.save(appUser);
@@ -34,7 +38,7 @@ public class UserServiceImpl implements UserService {
             AppUser appUserDB = userRepository.findById(userId).get();
             return userRepository.save(appUserDB);
         } else {
-            LOGGER.error("User bot found in our database - id : {}", appUser.id());
+            LOGGER.error("User not found in our database - id : {}", appUser.id());
             return null;
         }
     }
@@ -43,5 +47,10 @@ public class UserServiceImpl implements UserService {
     public void deleteUserById(Long userId) {
         userRepository.findById(userId);
         LOGGER.info("User deleted - id : {}", userId);
+    }
+
+    @Override
+    public List<AppUser> getUsersByLastName(String search) {
+        return appUserDao.getUserByStringCriteria("lastname", search);
     }
 }
