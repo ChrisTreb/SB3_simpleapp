@@ -2,10 +2,12 @@ package com.ctrl.simpleapp.dao.rowmapper;
 
 import com.ctrl.simpleapp.records.AppUser;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Component
 public class AppUserRowmapper implements RowMapper<AppUser> {
 
     @Override
