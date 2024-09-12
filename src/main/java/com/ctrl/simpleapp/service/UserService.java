@@ -15,4 +15,16 @@ public interface UserService {
     void deleteUserById(Long userId);
 
     List<AppUser> getUsersByLastName(String search);
+
+    List<AppUser> getUsersByFirstName(String search);
+
+    List<AppUser> getUsersByEmail(String search);
+
+    List<AppUser> getUsersByAddress(String search);
+
+    List<AppUser> getUsersByCity(String search);
+
+    List<AppUser> getUsersByCountry(String search);
+
+    List<AppUser> getUsersByRole(String search);
 }
