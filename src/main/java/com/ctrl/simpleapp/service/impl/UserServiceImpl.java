@@ -50,42 +50,42 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public AppUser getUsersById(Long id) {
+    public AppUser getUserById(Long id) {
         return appUserDao.getUserById(id).getFirst();
     }
 
     @Override
     public List<AppUser> getUsersByLastName(String search) {
-        return appUserDao.getUserByStringCriteria("lastname", search);
+        return appUserDao.getUsersByStringCriteria("lastname", search);
     }
 
     @Override
     public List<AppUser> getUsersByFirstName(String search) {
-        return appUserDao.getUserByStringCriteria("firstname", search);
+        return appUserDao.getUsersByStringCriteria("firstname", search);
     }
 
     @Override
     public List<AppUser> getUsersByEmail(String search) {
-        return appUserDao.getUserByStringCriteria("email", search);
+        return appUserDao.getUsersByStringCriteria("email", search);
     }
 
     @Override
     public List<AppUser> getUsersByAddress(String search) {
-        return appUserDao.getUserByStringCriteria("address", search);
+        return appUserDao.getUsersByStringCriteria("address", search);
     }
 
     @Override
     public List<AppUser> getUsersByCity(String search) {
-        return appUserDao.getUserByStringCriteria("city", search);
+        return appUserDao.getUsersByStringCriteria("city", search);
     }
 
     @Override
     public List<AppUser> getUsersByCountry(String search) {
-        return appUserDao.getUserByStringCriteria("country", search);
+        return appUserDao.getUsersByStringCriteria("country", search);
     }
 
     @Override
     public List<AppUser> getUsersByRole(String search) {
-        return appUserDao.getUserByStringCriteria("role", search);
+        return appUserDao.getUsersByStringCriteria("role", search);
     }
 }

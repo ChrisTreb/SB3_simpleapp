@@ -27,7 +27,7 @@ public class RunOnStartUp implements ApplicationListener<ApplicationReadyEvent> 
     public void onApplicationEvent(ApplicationReadyEvent event) {
         LOGGER.info("Application started with success !!!");
 
-        List<AppUser> list =  appUserDao.getUserByStringCriteria("firstname", "Christophe");
+        List<AppUser> list =  appUserDao.getUsersByStringCriteria("firstname", "Christophe");
 
         for (AppUser user : list) {
             LOGGER.info(String.valueOf(user));

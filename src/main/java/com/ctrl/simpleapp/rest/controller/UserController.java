@@ -43,7 +43,7 @@ public class UserController {
 
     @GetMapping("/user/{id}")
     public AppUser getUsersById(@PathVariable("id") Long userId) {
-        return userService.getUsersById(userId);
+        return userService.getUserById(userId);
     }
 
     @GetMapping("/user/lastname/{search}")
