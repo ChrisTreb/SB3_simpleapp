@@ -41,6 +41,11 @@ public class UserController {
         return "User deleted successfully - id : " + userId;
     }
 
+    @GetMapping("/user/{id}")
+    public AppUser getUsersById(@PathVariable("id") Long userId) {
+        return userService.getUsersById(userId);
+    }
+
     @GetMapping("/user/lastname/{search}")
     public List<AppUser> getUsersByLastname(@PathVariable("search") String search) {
         return userService.getUsersByLastName(search);

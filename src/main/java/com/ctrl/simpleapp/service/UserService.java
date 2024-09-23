@@ -14,6 +14,8 @@ public interface UserService {
 
     void deleteUserById(Long userId);
 
+    AppUser getUsersById(Long id);
+
     List<AppUser> getUsersByLastName(String search);
 
     List<AppUser> getUsersByFirstName(String search);

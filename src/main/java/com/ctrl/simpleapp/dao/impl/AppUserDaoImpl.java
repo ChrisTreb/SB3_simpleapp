@@ -41,5 +41,9 @@ public class AppUserDaoImpl implements AppUserDao {
         return List.of();
     }
 
-
+    @Override
+    public List<AppUser> getUserById(Long id) {
+        String query = QUERY + " WHERE id = " +  id;
+        return jdbcTemplate.query(query, new AppUserRowmapper());
+    }
 }

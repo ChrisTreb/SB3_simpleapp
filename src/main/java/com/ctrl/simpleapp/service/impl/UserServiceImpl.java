@@ -50,6 +50,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public AppUser getUsersById(Long id) {
+        return appUserDao.getUserById(id).getFirst();
+    }
+
+    @Override
     public List<AppUser> getUsersByLastName(String search) {
         return appUserDao.getUserByStringCriteria("lastname", search);
     }
