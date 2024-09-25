@@ -7,8 +7,9 @@ import java.util.List;
 
 public interface AppUserDao {
 
-    List<AppUser> getUserByStringCriteria(String criteria, String search);
+    List<AppUser> getUsersByStringCriteria(String criteria, String search);
 
-    List<AppUser> getUserByDateCriteria(Date criteria, String search);
+    List<AppUser> getUsersByDateCriteria(Date criteria, String search);
 
+    List<AppUser> getUserById(Long id);
 }

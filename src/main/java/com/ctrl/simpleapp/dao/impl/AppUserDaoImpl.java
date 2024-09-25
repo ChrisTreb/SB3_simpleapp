@@ -28,18 +28,23 @@ public class AppUserDaoImpl implements AppUserDao {
     }
 
     @Override
-    public List<AppUser> getUserByStringCriteria(String criteria, String search) {
+    public List<AppUser> getUsersByStringCriteria(String criteria, String search) {
 
-        String query = QUERY + " WHERE " + criteria + " LIKE '%" + search + "%';";
-        LOGGER.info("Query getUserByStringCriteria, criteria : {} - search : {} - Query = {}", criteria, search, query);
+        String query = QUERY + " WHERE " + criteria + " ILIKE '%" + search + "%';";
+        LOGGER.info("Query getUsersByStringCriteria, criteria : {} - search : {} - Query = {}", criteria, search, query);
 
         return jdbcTemplate.query(query, new AppUserRowmapper());
     }
 
     @Override
-    public List<AppUser> getUserByDateCriteria(Date criteria, String search) {
+    public List<AppUser> getUsersByDateCriteria(Date criteria, String search) {
+        // TODO
         return List.of();
     }
 
-
+    @Override
+    public List<AppUser> getUserById(Long id) {
+        String query = QUERY + " WHERE id = " +  id;
+        return jdbcTemplate.query(query, new AppUserRowmapper());
+    }
 }

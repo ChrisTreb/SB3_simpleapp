@@ -50,7 +50,42 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public AppUser getUserById(Long id) {
+        return appUserDao.getUserById(id).getFirst();
+    }
+
+    @Override
     public List<AppUser> getUsersByLastName(String search) {
-        return appUserDao.getUserByStringCriteria("lastname", search);
+        return appUserDao.getUsersByStringCriteria("lastname", search);
+    }
+
+    @Override
+    public List<AppUser> getUsersByFirstName(String search) {
+        return appUserDao.getUsersByStringCriteria("firstname", search);
+    }
+
+    @Override
+    public List<AppUser> getUsersByEmail(String search) {
+        return appUserDao.getUsersByStringCriteria("email", search);
+    }
+
+    @Override
+    public List<AppUser> getUsersByAddress(String search) {
+        return appUserDao.getUsersByStringCriteria("address", search);
+    }
+
+    @Override
+    public List<AppUser> getUsersByCity(String search) {
+        return appUserDao.getUsersByStringCriteria("city", search);
+    }
+
+    @Override
+    public List<AppUser> getUsersByCountry(String search) {
+        return appUserDao.getUsersByStringCriteria("country", search);
+    }
+
+    @Override
+    public List<AppUser> getUsersByRole(String search) {
+        return appUserDao.getUsersByStringCriteria("role", search);
     }
 }

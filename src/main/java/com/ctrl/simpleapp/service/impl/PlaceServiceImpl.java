@@ -1,5 +1,6 @@
 package com.ctrl.simpleapp.service.impl;
 
+import com.ctrl.simpleapp.dao.PlaceDao;
 import com.ctrl.simpleapp.records.Place;
 import com.ctrl.simpleapp.rest.api.repository.PlaceRepository;
 import com.ctrl.simpleapp.service.PlaceService;
@@ -17,6 +18,9 @@ public class PlaceServiceImpl implements PlaceService {
 
     @Autowired
     PlaceRepository placeRepository;
+
+    @Autowired
+    PlaceDao placeDao;
 
     @Override
     public Place savePlace(Place place) {
@@ -44,5 +48,50 @@ public class PlaceServiceImpl implements PlaceService {
     public void deletePlaceById(Long placeId) {
         placeRepository.findById(placeId);
         LOGGER.info("Place deleted - id : {}", placeId);
+    }
+
+    @Override
+    public Place getPlaceById(Long id) {
+        return placeDao.getPlaceById(id).getFirst();
+    }
+
+    @Override
+    public List<Place> getPlacesByName(String search) {
+        return placeDao.getPlacesByStringCriteria("name", search);
+    }
+
+    @Override
+    public List<Place> getPlacesByDescription(String search) {
+        return placeDao.getPlacesByStringCriteria("description", search);
+    }
+
+    @Override
+    public List<Place> getPlacesByPhoneNumber(String search) {
+        return placeDao.getPlacesByStringCriteria("phone_number", search);
+    }
+
+    @Override
+    public List<Place> getPlacesByEmail(String search) {
+        return placeDao.getPlacesByStringCriteria("email", search);
+    }
+
+    @Override
+    public List<Place> getPlacesByAddress(String search) {
+        return placeDao.getPlacesByStringCriteria("address", search);
+    }
+
+    @Override
+    public List<Place> getPlacesByCity(String search) {
+        return placeDao.getPlacesByStringCriteria("city", search);
+    }
+
+    @Override
+    public List<Place> getPlacesByCountry(String search) {
+        return placeDao.getPlacesByStringCriteria("country", search);
+    }
+
+    @Override
+    public List<Place> getPlacesByRating(int search) {
+        return placeDao.getPlacesByRating(search);
     }
 }

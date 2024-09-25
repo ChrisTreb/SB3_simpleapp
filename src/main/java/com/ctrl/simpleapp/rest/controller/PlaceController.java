@@ -40,4 +40,44 @@ public class PlaceController {
         placeService.deletePlaceById(placeId);
         return "Place deleted successfully - id : " + placeId;
     }
+
+    @GetMapping("/place/{id}")
+    public Place getPlacesById(@PathVariable("id") Long placeId) {
+        return placeService.getPlaceById(placeId);
+    }
+
+    @GetMapping("/place/name/{search}")
+    public List<Place> getPlaceByName(@PathVariable("search") String search) {
+        return placeService.getPlacesByName(search);
+    }
+
+    @GetMapping("/place/email/{search}")
+    public List<Place> getPlacesByEmail(@PathVariable("search") String search) {
+        return placeService.getPlacesByEmail(search);
+    }
+
+    @GetMapping("/place/address/{search}")
+    public List<Place> getPlacesByAddress(@PathVariable("search") String search) {
+        return placeService.getPlacesByAddress(search);
+    }
+
+    @GetMapping("/place/city/{search}")
+    public List<Place> getPlacesByCity(@PathVariable("search") String search) {
+        return placeService.getPlacesByCity(search);
+    }
+
+    @GetMapping("/place/country/{search}")
+    public List<Place> getPlacesByCountry(@PathVariable("search") String search) {
+        return placeService.getPlacesByCountry(search);
+    }
+
+    @GetMapping("/place/description/{search}")
+    public List<Place> getPlacesByDescription(@PathVariable("search") String search) {
+        return placeService.getPlacesByDescription(search);
+    }
+
+    @GetMapping("/place/rating/{search}")
+    public List<Place> getPlacesByRating(@PathVariable("search") int search) {
+        return placeService.getPlacesByRating(search);
+    }
 }
