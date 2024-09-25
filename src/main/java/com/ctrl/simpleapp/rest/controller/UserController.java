@@ -46,11 +46,6 @@ public class UserController {
         return userService.getUserById(userId);
     }
 
-    @GetMapping("/user/lastname/{search}")
-    public List<AppUser> getUsersByLastname(@PathVariable("search") String search) {
-        return userService.getUsersByLastName(search);
-    }
-
     @GetMapping("/user/firstname/{search}")
     public List<AppUser> getUsersByFirstname(@PathVariable("search") String search) {
         return userService.getUsersByFirstName(search);
@@ -80,5 +75,4 @@ public class UserController {
     public List<AppUser> getUsersByRole(@PathVariable("search") String search) {
         return userService.getUsersByRole(search);
     }
-
 }

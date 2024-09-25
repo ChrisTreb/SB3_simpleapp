@@ -12,5 +12,4 @@ public interface AppUserDao {
     List<AppUser> getUsersByDateCriteria(Date criteria, String search);
 
     List<AppUser> getUserById(Long id);
-
 }
