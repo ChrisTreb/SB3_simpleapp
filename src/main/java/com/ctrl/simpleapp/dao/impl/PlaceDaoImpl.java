@@ -53,4 +53,10 @@ public class PlaceDaoImpl implements PlaceDao {
         String query = QUERY + " WHERE rating = " +  rating;
         return jdbcTemplate.query(query, new PlaceRowMapper());
     }
+
+    @Override
+    public List<String> getCountries() {
+        String query = "SELECT DISTINCT country FROM place";
+        return jdbcTemplate.queryForList(query, String.class);
+    }
 }

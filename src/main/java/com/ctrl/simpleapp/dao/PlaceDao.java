@@ -14,4 +14,6 @@ public interface PlaceDao {
     List<Place> getPlaceById(Long id);
 
     List<Place> getPlacesByRating(int rating);
+
+    List<String> getCountries();
 }
