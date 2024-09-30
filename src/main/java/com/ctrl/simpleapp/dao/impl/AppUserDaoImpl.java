@@ -18,7 +18,7 @@ public class AppUserDaoImpl implements AppUserDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AppUserDaoImpl.class);
 
-    private static final String QUERY = "SELECT id, created_at, lastname, firstname, email, gender, date_of_birth, address, city, country, role" +
+    private static final String QUERY = "SELECT id, created_at, lastname, firstname, email, gender, date_of_birth, address, city, country, role, image" +
             " FROM app_user";
 
     private final JdbcTemplate jdbcTemplate;

@@ -18,7 +18,7 @@ public class PlaceDaoImpl implements PlaceDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PlaceDaoImpl.class);
 
-    private static final String QUERY = "SELECT id, created_at, name, address, city, country, description, phone_number, email, rating " +
+    private static final String QUERY = "SELECT id, created_at, name, address, city, country, description, phone_number, email, rating, image " +
             " FROM place";
 
     private final JdbcTemplate jdbcTemplate;

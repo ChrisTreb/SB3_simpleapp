@@ -8,5 +8,6 @@ CREATE TABLE place (
 	description VARCHAR (5000),
 	phone_number VARCHAR (20),
 	email VARCHAR (50),
-	rating INTEGER NOT NULL DEFAULT 0
+	rating INTEGER NOT NULL DEFAULT 0,
+	image TEXT
 );
