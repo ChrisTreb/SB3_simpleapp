@@ -51,6 +51,11 @@ public class UserController {
         return userService.getUsersByFirstName(search);
     }
 
+    @GetMapping("/user/lastname/{search}")
+    public List<AppUser> getUsersByLastname(@PathVariable("search") String search) {
+        return userService.getUsersByLastName(search);
+    }
+
     @GetMapping("/user/email/{search}")
     public List<AppUser> getUsersByEmail(@PathVariable("search") String search) {
         return userService.getUsersByEmail(search);
