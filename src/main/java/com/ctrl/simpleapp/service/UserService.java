@@ -16,6 +16,8 @@ public interface UserService {
 
     AppUser getUserById(Long id);
 
+    int countUsers();
+
     List<AppUser> getUsersByLastName(String search);
 
     List<AppUser> getUsersByFirstName(String search);
@@ -29,4 +31,6 @@ public interface UserService {
     List<AppUser> getUsersByCountry(String search);
 
     List<AppUser> getUsersByRole(String search);
+
+    List<AppUser> getUsersByIdRange(Long firstId, Long lastId);
 }

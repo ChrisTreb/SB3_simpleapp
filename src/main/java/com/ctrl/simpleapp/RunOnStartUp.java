@@ -1,7 +1,6 @@
 package com.ctrl.simpleapp;
 
-import com.ctrl.simpleapp.dao.impl.AppUserDaoImpl;
-import com.ctrl.simpleapp.records.AppUser;
+import com.ctrl.simpleapp.dao.impl.PlaceDaoImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ public class RunOnStartUp implements ApplicationListener<ApplicationReadyEvent> 
     private static final Logger LOGGER = LoggerFactory.getLogger(RunOnStartUp.class);
 
     @Autowired
-    AppUserDaoImpl appUserDao;
+    PlaceDaoImpl placeDao;
 
     public RunOnStartUp() {
         // Empty constructor
@@ -27,11 +26,10 @@ public class RunOnStartUp implements ApplicationListener<ApplicationReadyEvent> 
     public void onApplicationEvent(ApplicationReadyEvent event) {
         LOGGER.info("Application started with success !!!");
 
-        List<AppUser> list =  appUserDao.getUsersByStringCriteria("firstname", "Christophe");
+        List<String> list = placeDao.getCountries();
 
-        for (AppUser user : list) {
-            LOGGER.info(String.valueOf(user));
+        for(String country : list) {
+            LOGGER.info(country);
         }
-
     }
 }

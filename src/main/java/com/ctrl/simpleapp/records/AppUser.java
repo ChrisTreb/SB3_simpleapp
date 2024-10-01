@@ -20,5 +20,6 @@ public record AppUser(
         String address,
         String city,
         String country,
-        String role) {
+        String role,
+        String image) {
 }

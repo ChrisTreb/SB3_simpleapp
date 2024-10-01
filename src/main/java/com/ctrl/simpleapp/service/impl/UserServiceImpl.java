@@ -55,6 +55,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public int countUsers() {
+        return appUserDao.countUsers();
+    }
+
+    @Override
     public List<AppUser> getUsersByLastName(String search) {
         return appUserDao.getUsersByStringCriteria("lastname", search);
     }
@@ -87,5 +92,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<AppUser> getUsersByRole(String search) {
         return appUserDao.getUsersByStringCriteria("role", search);
+    }
+
+    @Override
+    public List<AppUser> getUsersByIdRange(Long firstId, Long lastId) {
+        return appUserDao.getUserByIdRange(firstId, lastId);
     }
 }

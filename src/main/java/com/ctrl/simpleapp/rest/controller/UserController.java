@@ -2,6 +2,7 @@ package com.ctrl.simpleapp.rest.controller;
 
 import com.ctrl.simpleapp.records.AppUser;
 import com.ctrl.simpleapp.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -41,6 +42,12 @@ public class UserController {
         return "User deleted successfully - id : " + userId;
     }
 
+    @Operation(summary = "Get number of users in DB", description = "Returns an integer")
+    @GetMapping("user/count")
+    public int countUsers() {
+        return userService.countUsers();
+    }
+
     @GetMapping("/user/{id}")
     public AppUser getUsersById(@PathVariable("id") Long userId) {
         return userService.getUserById(userId);
@@ -49,6 +56,11 @@ public class UserController {
     @GetMapping("/user/firstname/{search}")
     public List<AppUser> getUsersByFirstname(@PathVariable("search") String search) {
         return userService.getUsersByFirstName(search);
+    }
+
+    @GetMapping("/user/lastname/{search}")
+    public List<AppUser> getUsersByLastname(@PathVariable("search") String search) {
+        return userService.getUsersByLastName(search);
     }
 
     @GetMapping("/user/email/{search}")
@@ -74,5 +86,12 @@ public class UserController {
     @GetMapping("/user/role/{search}")
     public List<AppUser> getUsersByRole(@PathVariable("search") String search) {
         return userService.getUsersByRole(search);
+    }
+
+    @Operation(summary = "Get users by id between first and last", description = "Returns a list of users, default values : 1 -> 10")
+    @GetMapping("/user/id")
+    public List<AppUser> getUsersByIdRange(@RequestParam(defaultValue = "1") Long firstId,
+                                           @RequestParam(defaultValue = "10") Long lastId) {
+        return userService.getUsersByIdRange(firstId, lastId);
     }
 }

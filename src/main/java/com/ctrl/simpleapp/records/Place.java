@@ -22,5 +22,6 @@ public record Place(
         String description,
         String phone_number,
         String email,
-        int rating) {
+        int rating,
+        String image) {
 }

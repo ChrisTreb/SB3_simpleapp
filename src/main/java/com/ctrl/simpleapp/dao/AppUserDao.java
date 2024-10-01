@@ -7,9 +7,13 @@ import java.util.List;
 
 public interface AppUserDao {
 
+    int countUsers();
+
     List<AppUser> getUsersByStringCriteria(String criteria, String search);
 
     List<AppUser> getUsersByDateCriteria(Date criteria, String search);
 
     List<AppUser> getUserById(Long id);
+
+    List<AppUser> getUserByIdRange(Long firstId, Long lastId);
 }

@@ -18,13 +18,23 @@ public class AppUserDaoImpl implements AppUserDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AppUserDaoImpl.class);
 
-    private static final String QUERY = "SELECT id, created_at, lastname, firstname, email, gender, date_of_birth, address, city, country, role" +
+    private static final String QUERY = "SELECT id, created_at, lastname, firstname, email, gender, date_of_birth, address, city, country, role, image" +
             " FROM app_user";
 
     private final JdbcTemplate jdbcTemplate;
 
     public AppUserDaoImpl(@Qualifier("datasource") DataSource datasource) {
         jdbcTemplate = new JdbcTemplate(datasource);
+    }
+
+    @Override
+    public int countUsers() {
+        String query = "SELECT COUNT(id) FROM app_user";
+        Integer count = jdbcTemplate.queryForObject(query, Integer.class);
+        if (count == null) {
+            count = 0;
+        }
+        return count;
     }
 
     @Override
@@ -45,6 +55,12 @@ public class AppUserDaoImpl implements AppUserDao {
     @Override
     public List<AppUser> getUserById(Long id) {
         String query = QUERY + " WHERE id = " +  id;
+        return jdbcTemplate.query(query, new AppUserRowmapper());
+    }
+
+    @Override
+    public List<AppUser> getUserByIdRange(Long firstId, Long lastId) {
+        String query = QUERY + " WHERE id >= " +  firstId + " AND id <= " + lastId;
         return jdbcTemplate.query(query, new AppUserRowmapper());
     }
 }

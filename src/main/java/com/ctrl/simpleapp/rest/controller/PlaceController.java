@@ -80,4 +80,9 @@ public class PlaceController {
     public List<Place> getPlacesByRating(@PathVariable("search") int search) {
         return placeService.getPlacesByRating(search);
     }
+
+    @GetMapping("/place/countries")
+    public List<String> getCountries() {
+        return placeService.getCountries();
+    }
 }

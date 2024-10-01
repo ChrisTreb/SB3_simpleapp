@@ -17,8 +17,8 @@ import java.util.List;
 public class PlaceDaoImpl implements PlaceDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PlaceDaoImpl.class);
-
-    private static final String QUERY = "SELECT id, created_at, name, address, city, country, description, phone_number, email, rating " +
+  
+    private static final String QUERY = "SELECT id, created_at, name, address, city, country, description, phone_number, email, rating, image " +
             " FROM place";
 
     private final JdbcTemplate jdbcTemplate;
@@ -52,5 +52,11 @@ public class PlaceDaoImpl implements PlaceDao {
     public List<Place> getPlacesByRating(int rating) {
         String query = QUERY + " WHERE rating = " +  rating;
         return jdbcTemplate.query(query, new PlaceRowMapper());
+    }
+
+    @Override
+    public List<String> getCountries() {
+        String query = "SELECT DISTINCT country FROM place";
+        return jdbcTemplate.queryForList(query, String.class);
     }
 }

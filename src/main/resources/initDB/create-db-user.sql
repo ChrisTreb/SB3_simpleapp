@@ -9,5 +9,6 @@ CREATE TABLE app_user (
 	address VARCHAR (150) NOT NULL,
 	city VARCHAR (100) NOT NULL,
 	country VARCHAR (100) NOT NULL,
-	role VARCHAR (20)
+	role VARCHAR (20),
+	image TEXT
 );

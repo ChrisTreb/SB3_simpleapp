@@ -20,7 +20,8 @@ public class PlaceRowMapper implements RowMapper<Place> {
                 rs.getString("description"),
                 rs.getString("phone_number"),
                 rs.getString("email"),
-                rs.getInt("rating")
+                rs.getInt("rating"),
+                rs.getString("image")
         );
     }
 }

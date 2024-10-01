@@ -21,6 +21,7 @@ public record Room(
         String room_type,
         double price_per_night,
         int guests_capacity,
-        boolean is_available) {
+        boolean is_available,
+        String image) {
 }
 

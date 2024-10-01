@@ -94,4 +94,9 @@ public class PlaceServiceImpl implements PlaceService {
     public List<Place> getPlacesByRating(int search) {
         return placeDao.getPlacesByRating(search);
     }
+
+    @Override
+    public List<String> getCountries() {
+        return placeDao.getCountries();
+    }
 }
