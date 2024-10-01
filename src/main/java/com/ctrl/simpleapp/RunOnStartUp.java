@@ -31,6 +31,5 @@ public class RunOnStartUp implements ApplicationListener<ApplicationReadyEvent> 
         for(String country : list) {
             LOGGER.info(country);
         }
-
     }
 }
