@@ -55,6 +55,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public int countUsers() {
+        return appUserDao.countUsers();
+    }
+
+    @Override
     public List<AppUser> getUsersByLastName(String search) {
         return appUserDao.getUsersByStringCriteria("lastname", search);
     }

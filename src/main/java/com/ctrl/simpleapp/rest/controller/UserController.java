@@ -42,6 +42,12 @@ public class UserController {
         return "User deleted successfully - id : " + userId;
     }
 
+    @Operation(summary = "Get number of users in DB", description = "Returns an integer")
+    @GetMapping("user/count")
+    public int countUsers() {
+        return userService.countUsers();
+    }
+
     @GetMapping("/user/{id}")
     public AppUser getUsersById(@PathVariable("id") Long userId) {
         return userService.getUserById(userId);

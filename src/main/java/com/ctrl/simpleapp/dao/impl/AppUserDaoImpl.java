@@ -28,6 +28,16 @@ public class AppUserDaoImpl implements AppUserDao {
     }
 
     @Override
+    public int countUsers() {
+        String query = "SELECT COUNT(id) FROM app_user";
+        Integer count = jdbcTemplate.queryForObject(query, Integer.class);
+        if (count == null) {
+            count = 0;
+        }
+        return count;
+    }
+
+    @Override
     public List<AppUser> getUsersByStringCriteria(String criteria, String search) {
 
         String query = QUERY + " WHERE " + criteria + " ILIKE '%" + search + "%';";

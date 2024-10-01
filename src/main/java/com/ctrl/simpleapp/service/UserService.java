@@ -16,6 +16,8 @@ public interface UserService {
 
     AppUser getUserById(Long id);
 
+    int countUsers();
+
     List<AppUser> getUsersByLastName(String search);
 
     List<AppUser> getUsersByFirstName(String search);
