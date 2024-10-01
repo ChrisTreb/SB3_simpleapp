@@ -29,4 +29,6 @@ public interface UserService {
     List<AppUser> getUsersByCountry(String search);
 
     List<AppUser> getUsersByRole(String search);
+
+    List<AppUser> getUsersByIdRange(Long firstId, Long lastId);
 }

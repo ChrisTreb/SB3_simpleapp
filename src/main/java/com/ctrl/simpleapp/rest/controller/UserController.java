@@ -80,4 +80,10 @@ public class UserController {
     public List<AppUser> getUsersByRole(@PathVariable("search") String search) {
         return userService.getUsersByRole(search);
     }
+
+    @GetMapping("/user/id")
+    public List<AppUser> getUsersByIdRange(@RequestParam(defaultValue = "1") Long firstId,
+                                           @RequestParam(defaultValue = "10") Long lastId) {
+        return userService.getUsersByIdRange(firstId, lastId);
+    }
 }

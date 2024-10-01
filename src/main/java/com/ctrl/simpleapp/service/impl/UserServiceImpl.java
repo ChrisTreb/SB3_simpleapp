@@ -88,4 +88,9 @@ public class UserServiceImpl implements UserService {
     public List<AppUser> getUsersByRole(String search) {
         return appUserDao.getUsersByStringCriteria("role", search);
     }
+
+    @Override
+    public List<AppUser> getUsersByIdRange(Long firstId, Long lastId) {
+        return appUserDao.getUserByIdRange(firstId, lastId);
+    }
 }
