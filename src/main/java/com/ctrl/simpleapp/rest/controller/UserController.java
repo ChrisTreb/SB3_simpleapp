@@ -2,6 +2,7 @@ package com.ctrl.simpleapp.rest.controller;
 
 import com.ctrl.simpleapp.records.AppUser;
 import com.ctrl.simpleapp.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -81,6 +82,7 @@ public class UserController {
         return userService.getUsersByRole(search);
     }
 
+    @Operation(summary = "Get users by id between first and last", description = "Returns a list of users, default values : 1 -> 10")
     @GetMapping("/user/id")
     public List<AppUser> getUsersByIdRange(@RequestParam(defaultValue = "1") Long firstId,
                                            @RequestParam(defaultValue = "10") Long lastId) {
