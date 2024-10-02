@@ -1,5 +1,6 @@
 package com.ctrl.simpleapp.service.impl;
 
+import com.ctrl.simpleapp.dao.RoomDao;
 import com.ctrl.simpleapp.records.Room;
 import com.ctrl.simpleapp.rest.api.repository.RoomRepository;
 import com.ctrl.simpleapp.service.RoomService;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RoomServiceImpl implements RoomService {
@@ -17,6 +19,9 @@ public class RoomServiceImpl implements RoomService {
 
     @Autowired
     RoomRepository roomRepository;
+
+    @Autowired
+    RoomDao roomDao;
 
     @Override
     public Room saveRoom(Room room) {
@@ -44,5 +49,15 @@ public class RoomServiceImpl implements RoomService {
     public void deleteRoomById(Long roomId) {
         roomRepository.findById(roomId);
         LOGGER.info("Room deleted - id : {}", roomId);
+    }
+
+    @Override
+    public Room getRoomById(Long roomId) {
+        return roomDao.getRoomById(roomId);
+    }
+
+    @Override
+    public List<Room> getRoomsByPlaceId(Long placeId) {
+        return roomDao.getRoomsByPlaceId(placeId);
     }
 }

@@ -56,7 +56,13 @@ public class PlaceDaoImpl implements PlaceDao {
 
     @Override
     public List<String> getCountries() {
-        String query = "SELECT DISTINCT country FROM place";
+        String query = "SELECT DISTINCT country FROM place ORDER BY country ASC";
+        return jdbcTemplate.queryForList(query, String.class);
+    }
+
+    @Override
+    public List<String> getCitiesByCountry(String search) {
+        String query = "SELECT DISTINCT city FROM place WHERE country = '" + search + "' ORDER BY city ASC";
         return jdbcTemplate.queryForList(query, String.class);
     }
 }

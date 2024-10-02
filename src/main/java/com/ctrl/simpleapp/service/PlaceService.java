@@ -33,4 +33,6 @@ public interface PlaceService {
     List<Place> getPlacesByRating(int search);
 
     List<String> getCountries();
+
+    List<String> getCitiesByCountry(String search);
 }

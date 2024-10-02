@@ -99,4 +99,9 @@ public class PlaceServiceImpl implements PlaceService {
     public List<String> getCountries() {
         return placeDao.getCountries();
     }
+
+    @Override
+    public List<String> getCitiesByCountry(String search) {
+        return placeDao.getCitiesByCountry(search);
+    }
 }
