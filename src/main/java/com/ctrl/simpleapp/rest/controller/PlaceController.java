@@ -2,6 +2,7 @@ package com.ctrl.simpleapp.rest.controller;
 
 import com.ctrl.simpleapp.records.Place;
 import com.ctrl.simpleapp.service.PlaceService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -81,8 +82,15 @@ public class PlaceController {
         return placeService.getPlacesByRating(search);
     }
 
+    @Operation(summary = "Get all unique countries", description = "Returns a list of string : country")
     @GetMapping("/place/countries")
     public List<String> getCountries() {
         return placeService.getCountries();
+    }
+
+    @Operation(summary = "Get all unique cities by selected country", description = "Returns a list of string : city")
+    @GetMapping("/place/country/cities/{search}")
+    public List<String> getCitiesByCountry(@PathVariable("search") String search) {
+        return placeService.getCitiesByCountry(search);
     }
 }
