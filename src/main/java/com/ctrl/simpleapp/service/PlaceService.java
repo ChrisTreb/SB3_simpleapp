@@ -35,4 +35,6 @@ public interface PlaceService {
     List<String> getCountries();
 
     List<String> getCitiesByCountry(String search);
+
+    List<Place> getPlacesByIdRange(Long firstId, Long lastId);
 }

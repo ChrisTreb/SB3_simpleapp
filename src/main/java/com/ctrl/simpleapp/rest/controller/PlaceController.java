@@ -93,4 +93,11 @@ public class PlaceController {
     public List<String> getCitiesByCountry(@PathVariable("search") String search) {
         return placeService.getCitiesByCountry(search);
     }
+
+    @Operation(summary = "Get places by id between first and last", description = "Returns a list of places, default values : 1 -> 9")
+    @GetMapping("/place/id")
+    public List<Place> getPlacesByIdRange(@RequestParam(defaultValue = "1") Long firstId,
+                                           @RequestParam(defaultValue = "9") Long lastId) {
+        return placeService.getPlacesByIdRange(firstId, lastId);
+    }
 }

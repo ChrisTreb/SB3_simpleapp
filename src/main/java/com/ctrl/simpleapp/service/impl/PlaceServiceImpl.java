@@ -104,4 +104,9 @@ public class PlaceServiceImpl implements PlaceService {
     public List<String> getCitiesByCountry(String search) {
         return placeDao.getCitiesByCountry(search);
     }
+
+    @Override
+    public List<Place> getPlacesByIdRange(Long firstId, Long lastId) {
+        return placeDao.getPlacesByIdRange(firstId, lastId);
+    }
 }

@@ -26,10 +26,12 @@ public class RunOnStartUp implements ApplicationListener<ApplicationReadyEvent> 
     public void onApplicationEvent(ApplicationReadyEvent event) {
         LOGGER.info("Application started with success !!!");
 
+        /*
         List<String> list = placeDao.getCountries();
 
         for(String country : list) {
             LOGGER.info(country);
         }
+        */
     }
 }
