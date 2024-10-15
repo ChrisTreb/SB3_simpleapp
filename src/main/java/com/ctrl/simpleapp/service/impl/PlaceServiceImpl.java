@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PlaceServiceImpl implements PlaceService {
@@ -46,7 +47,7 @@ public class PlaceServiceImpl implements PlaceService {
 
     @Override
     public void deletePlaceById(Long placeId) {
-        placeRepository.findById(placeId);
+        placeRepository.deleteById(placeId);
         LOGGER.info("Place deleted - id : {}", placeId);
     }
 
