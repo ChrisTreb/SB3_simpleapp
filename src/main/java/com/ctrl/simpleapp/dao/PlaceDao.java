@@ -19,5 +19,5 @@ public interface PlaceDao {
 
     List<String> getCitiesByCountry(String search);
 
-    List<Place> getPlacesByIdRange(Long firstId, Long lastId);
+    List<Place> getPlacesByIdRange(Long firstId, Long limit);
 }

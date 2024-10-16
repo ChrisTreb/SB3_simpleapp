@@ -59,8 +59,8 @@ public class AppUserDaoImpl implements AppUserDao {
     }
 
     @Override
-    public List<AppUser> getUserByIdRange(Long firstId, Long lastId) {
-        String query = QUERY + " WHERE id >= " +  firstId + " AND id <= " + lastId;
+    public List<AppUser> getUserByIdRange(Long firstId, Long limit) {
+        String query = QUERY + " WHERE id >= " +  firstId + " ORDER BY id limit " + limit;
         return jdbcTemplate.query(query, new AppUserRowmapper());
     }
 }

@@ -36,5 +36,5 @@ public interface PlaceService {
 
     List<String> getCitiesByCountry(String search);
 
-    List<Place> getPlacesByIdRange(Long firstId, Long lastId);
+    List<Place> getPlacesByIdRange(Long firstId, Long limit);
 }

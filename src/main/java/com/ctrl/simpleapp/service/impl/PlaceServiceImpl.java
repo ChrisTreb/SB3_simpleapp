@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PlaceServiceImpl implements PlaceService {
@@ -107,7 +106,7 @@ public class PlaceServiceImpl implements PlaceService {
     }
 
     @Override
-    public List<Place> getPlacesByIdRange(Long firstId, Long lastId) {
-        return placeDao.getPlacesByIdRange(firstId, lastId);
+    public List<Place> getPlacesByIdRange(Long firstId, Long limit) {
+        return placeDao.getPlacesByIdRange(firstId, limit);
     }
 }

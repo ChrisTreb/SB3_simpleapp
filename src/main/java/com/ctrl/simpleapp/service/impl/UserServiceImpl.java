@@ -95,7 +95,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<AppUser> getUsersByIdRange(Long firstId, Long lastId) {
-        return appUserDao.getUserByIdRange(firstId, lastId);
+    public List<AppUser> getUsersByIdRange(Long firstId, Long limit) {
+        return appUserDao.getUserByIdRange(firstId, limit);
     }
 }

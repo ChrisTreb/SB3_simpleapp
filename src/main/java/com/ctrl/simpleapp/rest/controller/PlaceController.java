@@ -94,10 +94,10 @@ public class PlaceController {
         return placeService.getCitiesByCountry(search);
     }
 
-    @Operation(summary = "Get places by id between first and last", description = "Returns a list of places, default values : 1 -> 9")
+    @Operation(summary = "Get places by id between first and last", description = "Returns a list of places, default values : id = 1, limit 9")
     @GetMapping("/place/id")
     public List<Place> getPlacesByIdRange(@RequestParam(defaultValue = "1") Long firstId,
-                                           @RequestParam(defaultValue = "9") Long lastId) {
-        return placeService.getPlacesByIdRange(firstId, lastId);
+                                           @RequestParam(defaultValue = "9") Long limit) {
+        return placeService.getPlacesByIdRange(firstId, limit);
     }
 }

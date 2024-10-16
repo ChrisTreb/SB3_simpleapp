@@ -67,8 +67,8 @@ public class PlaceDaoImpl implements PlaceDao {
     }
 
     @Override
-    public List<Place> getPlacesByIdRange(Long firstId, Long lastId) {
-        String query = QUERY + " WHERE id >= " +  firstId + " AND id <= " + lastId;
+    public List<Place> getPlacesByIdRange(Long firstId, Long limit) {
+        String query = QUERY + " WHERE id >= " +  firstId + " ORDER BY id limit " + limit;
         return jdbcTemplate.query(query, new PlaceRowMapper());
     }
 }

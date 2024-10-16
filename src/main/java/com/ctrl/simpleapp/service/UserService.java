@@ -32,5 +32,5 @@ public interface UserService {
 
     List<AppUser> getUsersByRole(String search);
 
-    List<AppUser> getUsersByIdRange(Long firstId, Long lastId);
+    List<AppUser> getUsersByIdRange(Long firstId, Long limit);
 }
