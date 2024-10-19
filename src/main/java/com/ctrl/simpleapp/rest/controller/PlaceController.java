@@ -93,4 +93,11 @@ public class PlaceController {
     public List<String> getCitiesByCountry(@PathVariable("search") String search) {
         return placeService.getCitiesByCountry(search);
     }
+
+    @Operation(summary = "Get places by id from specific id to limited row", description = "Returns a list of places, default values : id = 1, limit 9")
+    @GetMapping("/place/id")
+    public List<Place> getPlacesByIdRange(@RequestParam(defaultValue = "1") Long firstId,
+                                           @RequestParam(defaultValue = "9") Long limit) {
+        return placeService.getPlacesByIdRange(firstId, limit);
+    }
 }

@@ -88,10 +88,10 @@ public class UserController {
         return userService.getUsersByRole(search);
     }
 
-    @Operation(summary = "Get users by id between first and last", description = "Returns a list of users, default values : 1 -> 10")
+    @Operation(summary = "Get users by id from specific id to limited row", description = "Returns a list of users, default values : id = 1, limit 9")
     @GetMapping("/user/id")
     public List<AppUser> getUsersByIdRange(@RequestParam(defaultValue = "1") Long firstId,
-                                           @RequestParam(defaultValue = "10") Long lastId) {
-        return userService.getUsersByIdRange(firstId, lastId);
+                                           @RequestParam(defaultValue = "9") Long limit) {
+        return userService.getUsersByIdRange(firstId, limit);
     }
 }

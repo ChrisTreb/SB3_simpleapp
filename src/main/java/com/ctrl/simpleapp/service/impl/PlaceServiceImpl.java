@@ -46,7 +46,7 @@ public class PlaceServiceImpl implements PlaceService {
 
     @Override
     public void deletePlaceById(Long placeId) {
-        placeRepository.findById(placeId);
+        placeRepository.deleteById(placeId);
         LOGGER.info("Place deleted - id : {}", placeId);
     }
 
@@ -103,5 +103,10 @@ public class PlaceServiceImpl implements PlaceService {
     @Override
     public List<String> getCitiesByCountry(String search) {
         return placeDao.getCitiesByCountry(search);
+    }
+
+    @Override
+    public List<Place> getPlacesByIdRange(Long firstId, Long limit) {
+        return placeDao.getPlacesByIdRange(firstId, limit);
     }
 }

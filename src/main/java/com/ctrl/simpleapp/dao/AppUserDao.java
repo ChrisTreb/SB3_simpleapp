@@ -15,5 +15,5 @@ public interface AppUserDao {
 
     List<AppUser> getUserById(Long id);
 
-    List<AppUser> getUserByIdRange(Long firstId, Long lastId);
+    List<AppUser> getUserByIdRange(Long firstId, Long limit);
 }

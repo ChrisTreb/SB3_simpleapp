@@ -65,4 +65,10 @@ public class PlaceDaoImpl implements PlaceDao {
         String query = "SELECT DISTINCT city FROM place WHERE country = '" + search + "' ORDER BY city ASC";
         return jdbcTemplate.queryForList(query, String.class);
     }
+
+    @Override
+    public List<Place> getPlacesByIdRange(Long firstId, Long limit) {
+        String query = QUERY + " WHERE id >= " +  firstId + " ORDER BY id limit " + limit;
+        return jdbcTemplate.query(query, new PlaceRowMapper());
+    }
 }
