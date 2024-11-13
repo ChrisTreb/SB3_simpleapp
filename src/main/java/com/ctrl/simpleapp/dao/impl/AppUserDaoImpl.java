@@ -66,7 +66,13 @@ public class AppUserDaoImpl implements AppUserDao {
 
     @Override
     public AppUser getUserWithCredentials(String login, String password) {
-        String query = QUERY + " WHERE login = '" + login + "' AND password = '" + password + "'";
-        return jdbcTemplate.query(query, new AppUserRowmapper()).getFirst();
+        AppUser user = null;
+        try {
+            String query = QUERY + " WHERE login = '" + login + "' AND password = '" + password + "'";
+            user = jdbcTemplate.query(query, new AppUserRowmapper()).getFirst();
+        } catch (Exception e) {
+            LOGGER.error("User not found with login : {}", login);
+        }
+        return user;
     }
 }
