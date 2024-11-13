@@ -18,7 +18,7 @@ public class AppUserDaoImpl implements AppUserDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AppUserDaoImpl.class);
 
-    private static final String QUERY = "SELECT id, created_at, lastname, firstname, email, gender, date_of_birth, address, city, country, role, image" +
+    private static final String QUERY = "SELECT id, created_at, lastname, firstname, email, gender, date_of_birth, address, city, country, role, image, login, password" +
             " FROM app_user";
 
     private final JdbcTemplate jdbcTemplate;
@@ -62,5 +62,11 @@ public class AppUserDaoImpl implements AppUserDao {
     public List<AppUser> getUserByIdRange(Long firstId, Long limit) {
         String query = QUERY + " WHERE id >= " +  firstId + " ORDER BY id limit " + limit;
         return jdbcTemplate.query(query, new AppUserRowmapper());
+    }
+
+    @Override
+    public AppUser getUserWithCredentials(String login, String password) {
+        String query = QUERY + " WHERE login = " + login + " AND password = " + password;
+        return jdbcTemplate.query(query, new AppUserRowmapper()).getFirst();
     }
 }

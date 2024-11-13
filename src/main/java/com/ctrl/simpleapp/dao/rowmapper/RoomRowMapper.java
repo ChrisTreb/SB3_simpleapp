@@ -19,7 +19,8 @@ public class RoomRowMapper implements RowMapper<Room> {
                 rs.getDouble("price_per_night"),
                 rs.getInt("guests_capacity"),
                 rs.getBoolean("is_available"),
-                rs.getString("image")
+                rs.getString("image"),
+                rs.getString("description")
         );
     }
 }

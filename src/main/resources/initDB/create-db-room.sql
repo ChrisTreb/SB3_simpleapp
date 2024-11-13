@@ -7,5 +7,6 @@ CREATE TABLE room (
 	price_per_night NUMERIC (10,2) NOT NULL,
 	guests_capacity INT NOT NULL DEFAULT 0,
     is_available BOOLEAN,
-    image TEXT
+    image TEXT,
+    description TEXT
 );
