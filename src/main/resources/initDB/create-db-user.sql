@@ -10,5 +10,7 @@ CREATE TABLE app_user (
 	city VARCHAR (100) NOT NULL,
 	country VARCHAR (100) NOT NULL,
 	role VARCHAR (20),
-	image TEXT
+	image TEXT,
+	login VARCHAR(50),
+	password TEXT
 );

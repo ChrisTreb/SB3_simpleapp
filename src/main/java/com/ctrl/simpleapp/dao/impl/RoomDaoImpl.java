@@ -17,7 +17,7 @@ public class RoomDaoImpl implements RoomDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RoomDaoImpl.class);
 
-    private static final String QUERY = "SELECT id, place_id, created_at, room_number, room_type, price_per_night, guests_capacity, is_available, image " +
+    private static final String QUERY = "SELECT id, place_id, created_at, room_number, room_type, price_per_night, guests_capacity, is_available, image, description " +
             " FROM room";
 
     private final JdbcTemplate jdbcTemplate;

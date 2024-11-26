@@ -98,4 +98,9 @@ public class UserServiceImpl implements UserService {
     public List<AppUser> getUsersByIdRange(Long firstId, Long limit) {
         return appUserDao.getUserByIdRange(firstId, limit);
     }
+
+    @Override
+    public AppUser getUserWithCredentials(String login, String password) {
+        return appUserDao.getUserWithCredentials(login, password);
+    }
 }

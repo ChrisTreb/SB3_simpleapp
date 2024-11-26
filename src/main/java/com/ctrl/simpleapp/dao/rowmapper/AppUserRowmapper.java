@@ -24,7 +24,9 @@ public class AppUserRowmapper implements RowMapper<AppUser> {
                 rs.getString("city"),
                 rs.getString("country"),
                 rs.getString("role"),
-                rs.getString("image")
+                rs.getString("image"),
+                rs.getString("login"),
+                rs.getString("password")
         );
     }
 }

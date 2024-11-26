@@ -33,4 +33,6 @@ public interface UserService {
     List<AppUser> getUsersByRole(String search);
 
     List<AppUser> getUsersByIdRange(Long firstId, Long limit);
+
+    AppUser getUserWithCredentials(String login, String password);
 }

@@ -16,4 +16,6 @@ public interface AppUserDao {
     List<AppUser> getUserById(Long id);
 
     List<AppUser> getUserByIdRange(Long firstId, Long limit);
+
+    AppUser getUserWithCredentials(String login, String password);
 }

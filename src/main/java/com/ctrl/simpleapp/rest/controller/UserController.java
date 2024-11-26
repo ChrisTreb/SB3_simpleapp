@@ -88,6 +88,12 @@ public class UserController {
         return userService.getUsersByRole(search);
     }
 
+    @Operation(summary = "Get user with credentials", description = "Returns user")
+    @PostMapping("/user/login")
+    public AppUser getUserWithCredentials(@RequestParam("login") String login, @RequestParam("password") String password) {
+        return userService.getUserWithCredentials(login, password);
+    }
+
     @Operation(summary = "Get users by id from specific id to limited row", description = "Returns a list of users, default values : id = 1, limit 9")
     @GetMapping("/user/id")
     public List<AppUser> getUsersByIdRange(@RequestParam(defaultValue = "1") Long firstId,
