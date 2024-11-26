@@ -1,10 +1,12 @@
 package com.ctrl.simpleapp.dao.impl;
 
+import com.ctrl.simpleapp.configuration.JasyptEncryptorConfig;
 import com.ctrl.simpleapp.dao.AppUserDao;
 import com.ctrl.simpleapp.dao.rowmapper.AppUserRowmapper;
 import com.ctrl.simpleapp.records.AppUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Component
 public class AppUserDaoImpl implements AppUserDao {
@@ -22,6 +25,9 @@ public class AppUserDaoImpl implements AppUserDao {
             " FROM app_user";
 
     private final JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    JasyptEncryptorConfig jasyptEncryptorConfig;
 
     public AppUserDaoImpl(@Qualifier("datasource") DataSource datasource) {
         jdbcTemplate = new JdbcTemplate(datasource);
@@ -67,9 +73,22 @@ public class AppUserDaoImpl implements AppUserDao {
     @Override
     public AppUser getUserWithCredentials(String login, String password) {
         AppUser user = null;
+
         try {
-            String query = QUERY + " WHERE login = '" + login + "' AND password = '" + password + "'";
+            String query = QUERY + " WHERE login = '" + login + "'";
             user = jdbcTemplate.query(query, new AppUserRowmapper()).getFirst();
+
+            String pass = user.password();
+            //LOGGER.info("Pass = {}", pass);
+
+            String decryptedPassword = jasyptEncryptorConfig.passwordEncryptor().decrypt(pass);
+            //LOGGER.info("Password : {}, Decrypted pass : {}", password, decryptedPassword);
+
+            if (!Objects.equals(password, decryptedPassword)) {
+                user = null;
+                LOGGER.error("Password doesn't match !");
+            }
+
         } catch (Exception e) {
             LOGGER.error("User not found with login : {}", login);
         }
