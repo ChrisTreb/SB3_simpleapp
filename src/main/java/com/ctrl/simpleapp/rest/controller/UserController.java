@@ -23,7 +23,7 @@ public class UserController {
 
     @PostMapping("/save-user")
     public AppUser saveUser(@Valid @RequestBody AppUser appUser) {
-        return userService.saveUser(appUser);
+        return userService.saveUser(userService.encryptPassword(appUser));
     }
 
     @GetMapping("/user")

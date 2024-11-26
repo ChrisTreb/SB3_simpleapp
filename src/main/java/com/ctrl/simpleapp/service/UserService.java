@@ -35,4 +35,6 @@ public interface UserService {
     List<AppUser> getUsersByIdRange(Long firstId, Long limit);
 
     AppUser getUserWithCredentials(String login, String password);
+
+    AppUser encryptPassword(AppUser user);
 }

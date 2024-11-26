@@ -1,5 +1,6 @@
 package com.ctrl.simpleapp.service.impl;
 
+import com.ctrl.simpleapp.configuration.JasyptEncryptorConfig;
 import com.ctrl.simpleapp.dao.AppUserDao;
 import com.ctrl.simpleapp.records.AppUser;
 import com.ctrl.simpleapp.rest.api.repository.UserRepository;
@@ -21,6 +22,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     AppUserDao appUserDao;
+
+    @Autowired
+    JasyptEncryptorConfig jasyptEncryptorConfig;
 
     @Override
     public AppUser saveUser(AppUser appUser) {
@@ -102,5 +106,25 @@ public class UserServiceImpl implements UserService {
     @Override
     public AppUser getUserWithCredentials(String login, String password) {
         return appUserDao.getUserWithCredentials(login, password);
+    }
+
+    @Override
+    public AppUser encryptPassword(AppUser user) {
+        return new AppUser(
+                user.id(),
+                user.created_at(),
+                user.lastname(),
+                user.firstname(),
+                user.email(),
+                user.gender(),
+                user.date_of_birth(),
+                user.address(),
+                user.city(),
+                user.country(),
+                user.role(),
+                user.image(),
+                user.login(),
+                jasyptEncryptorConfig.passwordEncryptor().encrypt(user.password())
+        );
     }
 }
