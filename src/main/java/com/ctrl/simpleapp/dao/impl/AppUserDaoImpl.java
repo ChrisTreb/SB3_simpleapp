@@ -94,4 +94,18 @@ public class AppUserDaoImpl implements AppUserDao {
         }
         return user;
     }
+
+    @Override
+    public AppUser getUserByLogin(String login) {
+        AppUser user;
+        String query = QUERY + " WHERE login = '" + login + "'";
+        List<AppUser> userList = jdbcTemplate.query(query, new AppUserRowmapper());
+        if (userList.isEmpty()) {
+            user = null;
+            LOGGER.error("No user with login : {} found", login);
+        } else {
+            user = userList.getFirst();
+        }
+        return user;
+    }
 }

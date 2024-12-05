@@ -100,4 +100,10 @@ public class UserController {
                                            @RequestParam(defaultValue = "9") Long limit) {
         return userService.getUsersByIdRange(firstId, limit);
     }
+
+    @GetMapping("/user/login/{search}")
+    public AppUser getUserByLogin(@PathVariable("search") String search) {
+        return userService.getUserByLogin(search);
+    }
+
 }

@@ -37,4 +37,6 @@ public interface UserService {
     AppUser getUserWithCredentials(String login, String password);
 
     AppUser encryptPassword(AppUser user);
+
+    AppUser getUserByLogin(String login);
 }

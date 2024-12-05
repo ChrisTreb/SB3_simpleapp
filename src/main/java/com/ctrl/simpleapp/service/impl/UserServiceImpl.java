@@ -127,4 +127,9 @@ public class UserServiceImpl implements UserService {
                 jasyptEncryptorConfig.passwordEncryptor().encrypt(user.password())
         );
     }
+
+    @Override
+    public AppUser getUserByLogin(String login) {
+        return appUserDao.getUserByLogin(login);
+    }
 }
