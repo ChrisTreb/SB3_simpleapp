@@ -23,7 +23,7 @@ public class UserController {
 
     @PostMapping("/save-user")
     public AppUser saveUser(@Valid @RequestBody AppUser appUser) {
-        return userService.saveUser(appUser);
+        return userService.saveUser(userService.encryptPassword(appUser));
     }
 
     @GetMapping("/user")
@@ -100,4 +100,10 @@ public class UserController {
                                            @RequestParam(defaultValue = "9") Long limit) {
         return userService.getUsersByIdRange(firstId, limit);
     }
+
+    @GetMapping("/user/login/{search}")
+    public AppUser getUserByLogin(@PathVariable("search") String search) {
+        return userService.getUserByLogin(search);
+    }
+
 }
