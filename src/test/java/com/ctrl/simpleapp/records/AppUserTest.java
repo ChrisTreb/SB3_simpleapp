@@ -27,6 +27,8 @@ class AppUserTest {
                 "encryptedPassword"
         );
 
+        System.out.println(user);
+
         assertAll("Vérification de tous les champs",
                 () -> assertEquals(1L, user.id()),
                 () -> assertEquals(testDate, user.created_at()),
