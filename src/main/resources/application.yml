@@ -9,7 +9,7 @@ spring:
     database: ctrl
     port: 5432
     driver-class-name: org.postgresql.Driver
-    jdbc-url: jdbc:postgresql://0.0.0.0:5432/ctrl
+    jdbc-url: jdbc:postgresql://192.168.1.33:5432/ctrl
     username: postgres
     password: postgres
     configuration:
