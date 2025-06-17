@@ -4,7 +4,6 @@ import com.ctrl.simpleapp.records.AppUser;
 import com.ctrl.simpleapp.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +13,6 @@ import java.util.List;
 @RequestMapping("api/")
 public class UserController {
 
-    @Autowired
     UserService userService;
 
     public UserController(UserService userService) {

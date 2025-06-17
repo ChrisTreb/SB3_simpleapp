@@ -4,7 +4,6 @@ import com.ctrl.simpleapp.records.Room;
 import com.ctrl.simpleapp.service.RoomService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +13,6 @@ import java.util.List;
 @RequestMapping("api/")
 public class RoomController {
 
-    @Autowired
     private final RoomService roomService;
 
     public RoomController(RoomService roomService) {
