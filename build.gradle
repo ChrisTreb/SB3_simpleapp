@@ -67,7 +67,10 @@ sonarqube {
 		property "sonar.java.source", "21"
 		property "sonar.java.coveragePlugin", "jacoco"
 		property "sonar.projectKey", "ctrl"
-		property "sonar.host.url", "http://localhost:9000"
+		// Ubuntu
+		//property "sonar.host.url", "http://localhost:9000"
+		// Windows
+		property "sonar.host.url", "http://192.168.1.33:9000"
 		property "sonar.token", "sqp_c3e423a1a07cc2ac08e62e605c65f3857c8d6e2e"  // à privilégier en CLI ou variable d’environnement pour la sécurité
 		property "sonar.coverage.jacoco.xmlReportPaths", "${buildDir}/reports/jacoco/jtest/jacocoTestReport.xml"
 	}
