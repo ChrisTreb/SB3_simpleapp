@@ -45,7 +45,9 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' pos
 ### Supprimer le cache docker
 docker system prune -a
 
-### Telebit
-Launch on ubuntu : curl -fsSL https://get.telebit.io | bash
-
-HTTP : ~/telebit http 8080
+### Sonarqube
+port : 9000
+login : admin
+password : &]Ubyd3n6,?C~XY
+token : sqp_c3e423a1a07cc2ac08e62e605c65f3857c8d6e2e
+gradle task : ./gradlew sonar
