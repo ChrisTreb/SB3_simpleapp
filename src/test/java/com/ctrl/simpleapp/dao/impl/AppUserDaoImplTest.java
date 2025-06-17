@@ -3,6 +3,7 @@ package com.ctrl.simpleapp.dao.impl;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.ctrl.simpleapp.configuration.JasyptEncryptorConfig;
 import com.ctrl.simpleapp.dao.rowmapper.AppUserRowmapper;
 import com.ctrl.simpleapp.records.AppUser;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,13 +23,16 @@ class AppUserDaoImplTest {
     @Mock
     private JdbcTemplate jdbcTemplate;
 
+    @Mock
+    private JasyptEncryptorConfig jasyptEncryptorConfig;
+
     @InjectMocks
     private AppUserDaoImpl appUserDao;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        appUserDao = new AppUserDaoImpl(dataSource);
+        appUserDao = new AppUserDaoImpl(dataSource, jasyptEncryptorConfig);
         // Injecter le mock JdbcTemplate
         ReflectionTestUtils.setField(appUserDao, "jdbcTemplate", jdbcTemplate);
     }

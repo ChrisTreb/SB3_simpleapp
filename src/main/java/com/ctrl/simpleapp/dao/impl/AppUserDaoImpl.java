@@ -26,11 +26,13 @@ public class AppUserDaoImpl implements AppUserDao {
 
     private final JdbcTemplate jdbcTemplate;
 
-    @Autowired
-    JasyptEncryptorConfig jasyptEncryptorConfig;
 
-    public AppUserDaoImpl(@Qualifier("datasource") DataSource datasource) {
+    private final JasyptEncryptorConfig jasyptEncryptorConfig;
+
+    @Autowired
+    public AppUserDaoImpl(@Qualifier("datasource") DataSource datasource, JasyptEncryptorConfig jasyptEncryptorConfig) {
         jdbcTemplate = new JdbcTemplate(datasource);
+        this.jasyptEncryptorConfig = jasyptEncryptorConfig;
     }
 
     @Override
