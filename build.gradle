@@ -62,7 +62,7 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 }
 
-sonarqube {
+sonar {
 	properties {
 		property "sonar.java.source", "21"
 		property "sonar.java.coveragePlugin", "jacoco"
@@ -93,6 +93,13 @@ tasks.named('test', Test) {
 	finalizedBy jacocoTestReport
 }
 
-tasks.named('sonarqube') {
+tasks.named('sonar') {
+	dependsOn 'test'
 	dependsOn 'jacocoTestReport'
+}
+
+tasks.named('build') {
+	dependsOn 'test'
+	dependsOn 'jacocoTestReport'
+	dependsOn 'sonar'
 }
